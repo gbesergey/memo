@@ -122,11 +122,13 @@ function Memo() {
             case self.DRAG_NODE_MOUSE_BUTTON:
                 if (ctrlKey && clickedElement) {
                     if (clickedElement.node instanceof SVGRectElement) {
-                        self.addSelectedNode(clickedElement);
+                        //self.addSelectedNode(clickedElement);
+                        self.toggleSelectedNode(clickedElement);
                     } else if (clickedElement.node instanceof SVGPathElement) {
-                        self.addSelectedRelationship(self.relationships[clickedElement.data("id")]);
+                        //self.addSelectedRelationship(self.relationships[clickedElement.data("id")]);
+                        self.toggleSelectedRelationship(self.relationships[clickedElement.data("id")]);
                     }
-                } else if (ctrlKey && !clickedElement) {
+                } else if (!clickedElement) {
                     self.ctrlPressedOnMouseDown = true;
                     self.selection.push({x: x, y: y});
                 } else if (!ctrlKey && clickedElement) {
@@ -136,9 +138,6 @@ function Memo() {
                     } else if (clickedElement.node instanceof SVGPathElement) {
                         self.addSelectedRelationship(self.relationships[clickedElement.data("id")]);
                     }
-                } else if (!ctrlKey && !clickedElement) {
-                    self.clearSelection();
-                    self.dragView = true;
                 }
                 break;
             case self.CREATE_ARC_MOUSE_BUTTON:
@@ -164,6 +163,7 @@ function Memo() {
                     }
                 } else {
                     self.clearSelection();
+                    self.dragView = true;
                 }
                 break;
         }
@@ -197,8 +197,6 @@ function Memo() {
                         }
                     }
                     self.selection = [];
-                } else {
-                    self.dragView = false;
                 }
                 break;
             case self.CREATE_ARC_MOUSE_BUTTON:
@@ -208,6 +206,9 @@ function Memo() {
                 if ((self.getConnectionBeginElement() !== releasedElement) && (releasedElement.type === "rect")) {
                     self.addConnection(self.getConnectionBeginElement().data("id"), releasedElement.data("id"))
                 }
+                break;
+            case self.DELETE_MOUSE_BUTTON:
+                self.dragView = false;
                 break;
         }
     };
@@ -562,11 +563,34 @@ Memo.prototype.addSelectedNode = function (node) {
     node.text.attr({stroke: this.NODE_FOCUSED_STROKE_COLOR, "fill": this.NODE_FOCUSED_STROKE_COLOR});
 };
 
+Memo.prototype.toggleSelectedNode = function (node) {
+    if (this.selectedNodes[node.data("id")]) {
+        this.removeSelectedNode(node);
+    } else {
+        this.addSelectedNode(node);
+    }
+};
+
 Memo.prototype.addSelectedRelationship = function (rel) {
     this.selectedRelationships[rel.path.data("id")] = rel;
     rel.path.attr({stroke: this.NODE_FOCUSED_STROKE_COLOR});
     rel.endCircle.attr({stroke: this.NODE_FOCUSED_STROKE_COLOR, "fill": this.NODE_FOCUSED_STROKE_COLOR});
     rel.text.attr({stroke: this.NODE_FOCUSED_STROKE_COLOR, "fill": this.NODE_FOCUSED_STROKE_COLOR});
+};
+
+Memo.prototype.removeSelectedRelationship = function(rel) {
+    delete this.selectedRelationships[rel.path.data("id")];
+    rel.path.attr({stroke: this.CONNECTION_STROKE_COLOR});
+    rel.endCircle.attr({stroke: this.CONNECTION_STROKE_COLOR, "fill": this.CONNECTION_STROKE_COLOR});
+    rel.text.attr({stroke: this.CONNECTION_STROKE_COLOR, "fill": this.CONNECTION_STROKE_COLOR});
+};
+
+Memo.prototype.toggleSelectedRelationship = function (rel) {
+    if (this.selectedRelationships[rel.path.data("id")]) {
+        this.removeSelectedRelationship(node);
+    } else {
+        this.addSelectedRelationship(node);
+    }
 };
 
 Memo.prototype.removeSelectedNode = function (node) {
@@ -766,40 +790,42 @@ Memo.prototype.setView = function (zoom, viewX, viewY) {
     this.currentZoom = zoom;
     this.viewWidth = this.currentZoom * this.baseViewWidth;
     this.viewHeight = this.currentZoom * this.baseViewHeight;
-    if ((this.maxX - this.minX) <= this.viewWidth) {
-        if (viewX < this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom) {
-            this.viewX = this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom;
-        } else if (viewX > this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom) {
-            this.viewX = this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom;
-        } else {
-            this.viewX = viewX;
-        }
-    } else {
-        if (viewX > this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom) {
-            this.viewX = this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom;
-        } else if (viewX < this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom) {
-            this.viewX = this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom;
-        } else {
-            this.viewX = viewX;
-        }
-    }
-    if ((this.maxY - this.minY) <= this.viewHeight) {
-        if (viewY < this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom) {
-            this.viewY = this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom;
-        } else if (viewY > this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom) {
-            this.viewY = this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom;
-        } else {
-            this.viewY = viewY;
-        }
-    } else {
-        if (viewY > this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom) {
-            this.viewY = this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom;
-        } else if (viewY < this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom) {
-            this.viewY = this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom;
-        } else {
-            this.viewY = viewY;
-        }
-    }
+    this.viewX = viewX;
+    this.viewY = viewY;
+    //if ((this.maxX - this.minX) <= this.viewWidth) {
+    //    if (viewX < this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom) {
+    //        this.viewX = this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom;
+    //    } else if (viewX > this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom) {
+    //        this.viewX = this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom;
+    //    } else {
+    //        this.viewX = viewX;
+    //    }
+    //} else {
+    //    if (viewX > this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom) {
+    //        this.viewX = this.maxX - this.viewWidth / 2 + this.MARGIN * this.currentZoom;
+    //    } else if (viewX < this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom) {
+    //        this.viewX = this.minX + this.viewWidth / 2 - this.MARGIN * this.currentZoom;
+    //    } else {
+    //        this.viewX = viewX;
+    //    }
+    //}
+    //if ((this.maxY - this.minY) <= this.viewHeight) {
+    //    if (viewY < this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom) {
+    //        this.viewY = this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom;
+    //    } else if (viewY > this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom) {
+    //        this.viewY = this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom;
+    //    } else {
+    //        this.viewY = viewY;
+    //    }
+    //} else {
+    //    if (viewY > this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom) {
+    //        this.viewY = this.maxY - this.viewHeight / 2 + this.MARGIN * this.currentZoom;
+    //    } else if (viewY < this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom) {
+    //        this.viewY = this.minY + this.viewHeight / 2 - this.MARGIN * this.currentZoom;
+    //    } else {
+    //        this.viewY = viewY;
+    //    }
+    //}
     this.paper.setViewBox(viewX - this.viewWidth / 2, viewY - this.viewHeight / 2, this.viewWidth, this.viewHeight);
 };
 
