@@ -2,6 +2,22 @@
  *  memo
  */
 function Memo() {
+    function Input() {
+        this.eventBuffer = [];
+
+
+
+        this.MANIPULATIONS = {
+            SELECT_NODE: function() {
+
+            },
+
+        };
+        this.STARTING_STATES = {
+
+        };
+    }
+
     /*
     lolo
      *  constants
@@ -430,8 +446,9 @@ Memo.prototype.addNode = function (x, y, id, text) {
     this.serializableNodes[nodeId] = {id: nodeId, x: x, y: y, text: text};
     node.data("id", nodeId);
     node.attr({fill: this.NODE_STROKE_COLOR, stroke: this.NODE_STROKE_COLOR, "fill-opacity": 0, "stroke-width": 4, cursor: "move"});
-    // drag functions
     var self = this;
+
+    // node drag
     var moveNode = function (dx, dy, x, y, mouseEvent) {
         if (mouseEvent.button === self.DRAG_NODE_MOUSE_BUTTON) {
             if (isEmpty(self.selectedNodes)) {
@@ -474,6 +491,7 @@ Memo.prototype.addNode = function (x, y, id, text) {
         }
     };
     node.drag(moveNode, gripNode, releaseNode);
+
     this.adjacencyMatrix[nodeId] = {};
     var nodeText = text;
     if (!nodeText) {
