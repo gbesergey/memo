@@ -3,6 +3,7 @@
  */
 function Memo() {
     function Input() {
+        // MouseEvent, KeyboardEvent, TouchEvent
         this.eventBuffer = [];
 
 
