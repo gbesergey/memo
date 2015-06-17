@@ -375,7 +375,7 @@ function Memo() {
                     },function(k, v) {
                         var result;
                         if (k == 'text') {
-                            result = v.replace(' ', '\u0027');
+                            result = v.replace(/ /g, '\u0027');
                         } else {
                             result = v;
                         }
@@ -397,7 +397,7 @@ function Memo() {
                             var mem = JSON.parse(e.target.result, function(k, v) {
                                 var result;
                                 if (k == 'text') {
-                                    result = v.replace('\u0027', ' ');
+                                    result = v.replace(/\u0027/g, ' ');
                                 } else {
                                     result = v;
                                 }
