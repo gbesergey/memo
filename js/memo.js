@@ -2,23 +2,8 @@
  *  memo
  */
 function Memo() {
-    function Input() {
-        // MouseEvent, KeyboardEvent, TouchEvent
-        this.eventBuffer = [];
-
-
-
-        this.MANIPULATIONS = {
-            SELECT_NODE: function() {
-
-            },
-
-        };
-        this.STARTING_STATES = {
-
-        };
-    }
-
+    // self
+    var memo = this;
     /*
     lolo
      *  constants
@@ -387,6 +372,14 @@ function Memo() {
                         lastConnectionId: self.lastConnectionId,
                         serializableNodes: self.serializableNodes,
                         serializableRelationships: self.serializableRelationships
+                    },function(k, v) {
+                        var result;
+                        if (k == 'text') {
+                            result = v.replace(' ', '\u0027');
+                        } else {
+                            result = v;
+                        }
+                        return result;
                     });
                     var uriContent = "data:application/json;filename=filename.json," + mem;
                     var downloadLink = document.createElement("a");
@@ -401,7 +394,15 @@ function Memo() {
                         var file = files[0];
                         var reader = new FileReader();
                         reader.onload = function(e) {
-                            var mem = JSON.parse(e.target.result);
+                            var mem = JSON.parse(e.target.result, function(k, v) {
+                                var result;
+                                if (k == 'text') {
+                                    result = v.replace('\u0027', ' ');
+                                } else {
+                                    result = v;
+                                }
+                                return result;
+                            });
                             self.loadMem(mem);
                         };
                         reader.readAsText(file);
