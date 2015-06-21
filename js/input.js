@@ -4,7 +4,7 @@ function Input(graph) {
     input.graph = graph;
     // MouseEvent, [WheelEvent], KeyboardEvent, TouchEvent
     input.eventBuffer = [];
-    input.currentPatterns = [];
+    input.currentInputProcessors = [];
 
     input.STARTING_STATE_FUNCTIONS = {
         NOT_SELECTED: function NOT_SELECTED() {
@@ -38,8 +38,8 @@ function Input(graph) {
 
     input.MANIPULATIONS = {
         SELECT_NODE: {
-            startingStateFunction: input.STARTING_STATE_FUNCTIONS.NOT_SELECTED,
-            getInputPatternProcessor: function () {
+            isStartingState: input.STARTING_STATE_FUNCTIONS.NOT_SELECTED,
+            getInputProcessor: function () {
                 return {
                     position: 0,
                     inputMatcher: input.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
@@ -53,6 +53,13 @@ function Input(graph) {
                     },
                     manipulation: function () {
                         input.graph.selectNode(this.x, this.y);
+                    },
+                    next: function(inputEvent) {
+                        var result = this.inputMatcher.next(this.position, inputEvent);
+                        if (result !== false ) {
+                            this.parametersCollector(this.position, inputEvent);
+                        }
+                        return result;
                     }
                 };
             }
@@ -65,9 +72,22 @@ Input.prototype.consume = function (inputEvent) {
 };
 
 Input.prototype.next = function () {
-    for (var event in input.eventBuffer) {
-        for (var inputPattern in input.INPUT_PATTERN_MATCHERS) {
-            jQuery.extend({},{});
+    for (var eventIndex in input.eventBuffer) {
+        for (var manipulationIndex in input.MANIPULATIONS) {
+            var manipulation = input.MANIPULATIONS[manipulationIndex];
+            if (manipulation.isStartingState()) {
+                input.currentInputProcessors.push(manipulation.getInputProcessor());
+            }
+        }
+        for (var inputProcessorIndex in input.currentInputProcessors) {
+            var inputProcessor = input.currentInputProcessors[inputProcessorIndex];
+            var eventProcessingResult = inputProcessor.next(input.eventBuffer[eventIndex]);
+            if (eventProcessingResult == true) {
+                inputProcessor.manipulation();
+                input.currentInputProcessors.splice(inputProcessorIndex ,1);
+            } else if (eventProcessingResult === false) {
+                input.currentInputProcessors.splice(inputProcessorIndex ,1);
+            }
         }
     }
 };
