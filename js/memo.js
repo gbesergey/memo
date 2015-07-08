@@ -932,6 +932,10 @@ Memo.prototype.loadMem = function(mem) {
     this.clearSelection();
 };
 
+Memo.prototype.selectNode = function(x ,y) {
+    this.addSelectedNode(self.paper.getElementByPoint(x, y));
+};
+
 var memo;
 
 window.onload = function () {

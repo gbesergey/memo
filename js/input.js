@@ -11,23 +11,28 @@ function Input(graph) {
             return input.graph.selection.length == 0;
         },
         ONLY_NODES_SELECTED: function ONLY_NODES_SELECTED() {
-            return input.graph.selectedNodes.length != 0 && input.graph.selectedRelationships.length == 0;
+            return input.graph.selectedNodes.length != 0 &&
+                input.graph.selectedRelationships.length == 0;
         }
     };
 
     input.INPUT_PATTERN_MATCHERS = {
-        LEFT_CLICK: {
-            next: function (position, inputEvent) {
-                if (inputEvent instanceof MouseEvent && inputEvent.button == 0) {
-                    return true;
-                } else {
-                    return false;
+        LEFT_CLICK: function () {
+            return {
+                next: function (position, inputEvent) {
+                    if (inputEvent instanceof MouseEvent &&
+                        inputEvent.button == 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
                 }
             }
         },
         MOUSE_MOVE: {
             next: function (position, inputEvent) {
-                if (inputEvent instanceof MouseEvent && (inputEvent.movementX != 0 || inputEvent.movementY != 0)) {
+                if (inputEvent instanceof MouseEvent &&
+                    (inputEvent.movementX != 0 || inputEvent.movementY != 0)) {
                     return true;
                 } else {
                     return false;
@@ -42,9 +47,9 @@ function Input(graph) {
             getInputProcessor: function () {
                 return {
                     position: 0,
-                    inputMatcher: input.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
+                    inputMatcher: input.INPUT_PATTERN_MATCHERS.LEFT_CLICK(),
                     parametersCollector: {
-                        next: function(position, inputEvent) {
+                        next: function (position, inputEvent) {
                             if (position == 0) {
                                 this.x = inputEvent.screenX;
                                 this.y = inputEvent.screenY;
@@ -54,9 +59,10 @@ function Input(graph) {
                     manipulation: function () {
                         input.graph.selectNode(this.x, this.y);
                     },
-                    next: function(inputEvent) {
-                        var result = this.inputMatcher.next(this.position, inputEvent);
-                        if (result !== false ) {
+                    next: function (inputEvent) {
+                        var result = this.inputMatcher.next(this.position,
+                        inputEvent);
+                        if (result !== false) {
                             this.parametersCollector(this.position, inputEvent);
                         }
                         return result;
@@ -84,9 +90,9 @@ Input.prototype.next = function () {
             var eventProcessingResult = inputProcessor.next(input.eventBuffer[eventIndex]);
             if (eventProcessingResult == true) {
                 inputProcessor.manipulation();
-                input.currentInputProcessors.splice(inputProcessorIndex ,1);
+                input.currentInputProcessors.splice(inputProcessorIndex, 1);
             } else if (eventProcessingResult === false) {
-                input.currentInputProcessors.splice(inputProcessorIndex ,1);
+                input.currentInputProcessors.splice(inputProcessorIndex, 1);
             }
         }
     }
