@@ -557,13 +557,13 @@ Memo.prototype.gripNodes = function(nodes) {
         node.gripY = node.attr("y");
         node.animate({"fill-opacity": .2}, 100);
     }
-}
+};
 
 Memo.prototype.releaseNodes = function(nodes) {
     for (var nodeId in nodes) {
         nodes[nodeId].animate({"fill-opacity": 0}, 100);
     }
-}
+};
 
 Memo.prototype.moveNode = function(node, dx, dy) {
     var attr = {x: node.gripX + this.currentZoom * dx, y: node.gripY + this.currentZoom * dy};
@@ -575,7 +575,7 @@ Memo.prototype.moveNode = function(node, dx, dy) {
     for (var connectionId in this.relationships) {
         this.redrawConnection(this.relationships[connectionId]);
     }
-}
+};
 
 Memo.prototype.addSelectedNode = function (node) {
     this.selectedNodes[node.data("id")] = node;

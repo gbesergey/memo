@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/js/memo.js" line="945" />
+    <bookmark url="file://$PROJECT_DIR$/js/memo.js" line="941" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb3d8a68-d948-4509-ba20-4a7c8b951eb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/input.js" afterPath="$PROJECT_DIR$/js/input.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/memo.css" afterPath="$PROJECT_DIR$/css/memo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/memo.js" afterPath="$PROJECT_DIR$/js/memo.js" />
+    <list default="true" id="fb3d8a68-d948-4509-ba20-4a7c8b951eb9" name="Default" comment="input progress">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/Input.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/input.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input-architecture.json" afterPath="$PROJECT_DIR$/input-architecture.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/memo.js" afterPath="$PROJECT_DIR$/js/memo.js" />
     </list>
     <ignored path="memo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,12 +36,22 @@
     <favorites_list name="memo" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="memo.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/memo.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Input.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/Input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43374643">
-              <caret line="936" column="2" selection-start-line="936" selection-start-column="2" selection-end-line="936" selection-end-column="2" />
+            <state relative-caret-position="231">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DOMEvents.js" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMEvents.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="579" column="0" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,14 +72,16 @@
       <list>
         <option value="$PROJECT_DIR$/memo.html" />
         <option value="$PROJECT_DIR$/js/memo.js" />
-        <option value="$PROJECT_DIR$/js/input.js" />
         <option value="$PROJECT_DIR$/css/memo.css" />
+        <option value="$PROJECT_DIR$/js/input.js" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -75,12 +93,10 @@
   <component name="MavenProjectNavigator">
     <treeState />
   </component>
-  <component name="NamedScopeManager">
-    <order />
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="x" value="-2" />
+    <option name="width" value="1924" />
+    <option name="height" value="1082" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -89,10 +105,31 @@
           <State>
             <id />
           </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JBoss Seam issues</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Android</id>
+            <id>JSValidateTypes</id>
           </State>
         </selected-state>
       </profile-state>
@@ -121,8 +158,11 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -173,7 +213,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -187,7 +226,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="220" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
@@ -206,13 +245,33 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1145" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="E:\cache\projects\memo\js" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="#PerlConfigurationType" factoryName="Perl">
+      <option name="SCRIPT_PATH" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="PERL_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="CHARSET" />
+      <option name="USE_ALTERNATIVE_SDK" value="false" />
+      <option name="ALTERNATIVE_SDK_PATH" />
+      <option name="scriptCharset" value="utf8" />
+      <option name="startMode" value="RUN" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -221,22 +280,21 @@
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -246,18 +304,15 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -284,6 +339,76 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="myFilePath" />
@@ -301,6 +426,60 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -369,13 +548,43 @@
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
       <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="false" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JRubyCucumberRunConfigurationType" factoryName="JRuby Cucumber">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-Dforce.jruby.jit=true -Djruby.debug.fullTrace=true" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -399,12 +608,120 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="memo" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -449,12 +766,88 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="memo" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -464,8 +857,120 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="memo" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -474,6 +979,7 @@
       <changelist id="fb3d8a68-d948-4509-ba20-4a7c8b951eb9" name="Default" comment="" />
       <created>1422707491592</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1422707491592</updated>
       <workItem from="1422707494158" duration="864000" />
       <workItem from="1431374511516" duration="3970000" />
@@ -498,122 +1004,127 @@
       <workItem from="1434569349616" duration="4612000" />
       <workItem from="1434647561585" duration="3539000" />
       <workItem from="1434787444034" duration="5312000" />
-      <workItem from="1434875843897" duration="25080000" />
-      <workItem from="1435435669932" duration="7848000" />
-      <workItem from="1435867495206" duration="3587000" />
-      <workItem from="1436029059904" duration="13482000" />
-      <workItem from="1436382982916" duration="2301000" />
+      <workItem from="1434875843897" duration="14555000" />
+      <workItem from="1466771466299" duration="11331000" />
     </task>
     <task id="LOCAL-00001" summary="removed pan limits">
       <created>1431453487898</created>
       <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1431453487898</updated>
     </task>
     <task id="LOCAL-00002" summary="input architecture initial">
       <created>1431894786431</created>
       <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1431894786431</updated>
     </task>
     <task id="LOCAL-00003" summary="comment for event types">
       <created>1431894871922</created>
       <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1431894871922</updated>
     </task>
     <task id="LOCAL-00004" summary="kicked some">
       <created>1434572776318</created>
       <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1434572776318</updated>
     </task>
     <task id="LOCAL-00005" summary="fixed spaces in text on save and load">
       <created>1434574825141</created>
       <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1434574825141</updated>
     </task>
     <task id="LOCAL-00006" summary="input progress">
       <created>1434922489531</created>
       <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1434922489531</updated>
     </task>
-    <task id="LOCAL-00007" summary="input next method">
-      <created>1434923497694</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1434923497694</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132142000" />
+    <option name="totallyTimeSpent" value="105730000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="false" />
+    <frame x="-2" y="0" width="1924" height="1082" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13035715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UML Diagrams" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33020833" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13385417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33020833" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51494694" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61620057" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" x="170" y="191" width="1724" height="882" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13035715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13392857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829374" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -634,12 +1145,11 @@
     <MESSAGE value="kicked some" />
     <MESSAGE value="fixed spaces in text on save and load" />
     <MESSAGE value="input progress" />
-    <MESSAGE value="input next method" />
-    <option name="LAST_COMMIT_MESSAGE" value="input next method" />
+    <option name="LAST_COMMIT_MESSAGE" value="input progress" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -648,173 +1158,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/input.js">
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/memo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -822,7 +1168,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/memo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="400" column="38" selection-start-line="400" selection-start-column="38" selection-end-line="400" selection-end-column="38" />
           <folding />
         </state>
@@ -830,7 +1184,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="399" column="64" selection-start-line="399" selection-start-column="64" selection-end-line="399" selection-end-column="64" />
           <folding />
         </state>
@@ -838,252 +1192,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="26" column="0" selection-start-line="20" selection-start-column="6" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
@@ -1091,7 +1280,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
@@ -1099,7 +1288,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
           <folding />
         </state>
@@ -1107,7 +1296,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1115,7 +1304,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1123,7 +1312,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1131,7 +1320,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1139,7 +1328,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery-2.1.4.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1147,110 +1336,161 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/architecture.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4827175">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4989733">
+        <state relative-caret-position="0">
           <caret line="745" column="40" selection-start-line="745" selection-start-column="40" selection-end-line="745" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMTraversalAndRange.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33264887">
+        <state relative-caret-position="0">
           <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/input-architecture.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15992102">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <marker date="1432498220000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432498220000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432498220000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432498220000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/memo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33460438">
+        <state relative-caret-position="273">
           <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding>
-            <marker date="1436385697202" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436385697202" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436385697202" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436385697202" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436385697202" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436385697202" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436385697202" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3088655">
-          <caret line="87" column="10" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="10" />
-          <folding>
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{&quot;position&quot;: 0...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1436101519169" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43374643">
-          <caret line="936" column="2" selection-start-line="936" selection-start-column="2" selection-end-line="936" selection-end-column="2" />
+        <state relative-caret-position="1197">
+          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/input-architecture.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="0" column="2549" selection-start-line="0" selection-start-column="2549" selection-end-line="0" selection-end-column="2549" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMEvents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="579" column="0" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>spidercommon</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>memo</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.35443038" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
