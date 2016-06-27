@@ -11,11 +11,15 @@ class Input {
 
     /**
      * @param {InputEvent} inputEvent
+     * @return {undefined}
      */
     feed(inputEvent) {
         this.eventBuffer.push(inputEvent);
     }
 
+    /**
+     * @return {undefined}
+     */
     next() {
         for (var eventIndex in this.eventBuffer) {
             for (var manipulationIndex in Input.MANIPULATIONS) {
@@ -37,15 +41,13 @@ class Input {
         }
     }
 
-    static get STARTING_STATE_FUNCTIONS() {
+    /**
+     * @return {Object<string, StartingStateChecker>}
+     */
+    static get STARTING_STATE_CHECKERS() {
         return {
-            NOT_SELECTED: function NOT_SELECTED() {
-                return this.graph.selection.length == 0;
-            },
-            ONLY_NODES_SELECTED: function ONLY_NODES_SELECTED() {
-                return this.graph.selectedNodes.length != 0 &&
-                    this.graph.selectedRelationships.length == 0;
-            }
+            NOT_SELECTED: new StartingStateChecker((graph) => graph.selection.length == 0),
+            ONLY_NODES_SELECTED: new StartingStateChecker((graph) => graph.selectedNodes.length != 0 && graph.selectedRelationships.length == 0)
         }
     }
     
@@ -72,7 +74,7 @@ class Input {
         // var input = this;
         return {
             SELECT_NODE: new Manipulation(
-                Input.STARTING_STATE_FUNCTIONS.NOT_SELECTED,
+                Input.STARTING_STATE_CHECKERS.NOT_SELECTED,
                 new InputProcessor(
                     Input.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
                     function (position, inputEvent) {
@@ -80,19 +82,30 @@ class Input {
                             this.x = inputEvent.screenX;
                             this.y = inputEvent.screenY;
                         }
-                    }, function (inputEvent) {
-                        var result = this.inputMatcher.next(this.position,
-                            inputEvent);
-                        if (result !== false) {
-                            this.parametersCollector(this.position, inputEvent);
-                        }
-                        return result;
                     }, function () {
                         this.graph.selectNode(this.x, this.y);
                     }
                 )
             )
         }
+    }
+}
+
+class StartingStateChecker {
+    /**
+     * @param {function(Graph): boolean} checkerFunction
+     */
+    constructor(checkerFunction) {
+        this._checkerFunction = checkerFunction;
+    }
+
+
+    /**
+     * @param {Graph} graph
+     * @return {boolean}
+     */
+    check(graph) {
+        return this._checkerFunction(graph);
     }
 }
 
@@ -105,9 +118,11 @@ class InputPatternMatcher {
     }
 
     /**
+     * @param {number} position
+     * @param {InputEvent} inputEvent
      * @return {boolean}
      */
-    next() {
+    next(position, inputEvent) {
         return this._next();
     }
 }
@@ -117,22 +132,27 @@ class InputProcessor {
     /**
      * @param {InputPatternMatcher} inputPatternMatcher
      * @param {function(number, InputEvent)} parametersCollector
-     * @param {function(InputEvent): number} next
      * @param {function(): undefined} action
      */
-    constructor(inputPatternMatcher, parametersCollector, next, action) {
+    constructor(inputPatternMatcher, parametersCollector, action) {
         this._position = 0;
         this._inputPatternMatcher = inputPatternMatcher;
         this._parametersCollector = parametersCollector;
-        this._next = next;
         this._action = action;
     }
 
     /**
-     * @return {undefined}
+     * @param {InputEvent} inputEvent
+     * @return {boolean}
      */
-    next() {
-        this._next();
+    next(inputEvent) {
+        var result = this._inputPatternMatcher.next(this._position,
+            inputEvent);
+        if (result !== false) {
+            this._parametersCollector(this.position, inputEvent);
+        }
+        this._position++;
+        return result;
     }
 }
 
@@ -140,15 +160,11 @@ class InputProcessor {
 class Manipulation {
 
     /**
-     * @param {function} startingStateFunction
+     * @param {StartingStateChecker} startingStateChecker
      * @param {InputProcessor} inputProcessor
      */
-    constructor(startingStateFunction, inputProcessor) {
-        this._startingStateFunction = startingStateFunction;
+    constructor(startingStateChecker, inputProcessor) {
+        this._startingStateChecker = startingStateChecker;
         this._inputProcessor = inputProcessor;
-    }
-
-    get inputProcessor() {
-        return this._inputProcessor
     }
 }
