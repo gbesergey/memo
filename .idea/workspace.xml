@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/js/memo.js" line="945" />
+    <bookmark url="file://$PROJECT_DIR$/js/memo.js" line="967" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb3d8a68-d948-4509-ba20-4a7c8b951eb9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Input.js" afterPath="$PROJECT_DIR$/js/Input.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/memo.js" afterPath="$PROJECT_DIR$/js/memo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memo.html" afterPath="$PROJECT_DIR$/memo.html" />
     </list>
     <ignored path="memo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,21 +31,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Input.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/Input.js">
+      <file leaf-file-name="memo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/memo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="39" column="67" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
+            <state relative-caret-position="171">
+              <caret line="130" column="4" selection-start-line="130" selection-start-column="7" selection-end-line="187" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memo.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/memo.js">
+      <file leaf-file-name="Input.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/Input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="117" column="13" selection-start-line="114" selection-start-column="3" selection-end-line="117" selection-end-column="13" />
+            <state relative-caret-position="892">
+              <caret line="155" column="27" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -70,11 +71,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/memo.html" />
-        <option value="$PROJECT_DIR$/js/memo.js" />
         <option value="$PROJECT_DIR$/css/memo.css" />
         <option value="$PROJECT_DIR$/js/input.js" />
         <option value="$PROJECT_DIR$/js/Graph.js" />
+        <option value="$PROJECT_DIR$/memo.html" />
+        <option value="$PROJECT_DIR$/js/memo.js" />
         <option value="$PROJECT_DIR$/js/Input.js" />
       </list>
     </option>
@@ -741,7 +742,7 @@
       <workItem from="1467021626467" duration="1001000" />
       <workItem from="1467022796008" duration="9808000" />
       <workItem from="1467055626728" duration="16154000" />
-      <workItem from="1467714511730" duration="15116000" />
+      <workItem from="1467714511730" duration="17859000" />
     </task>
     <task id="LOCAL-00001" summary="removed pan limits">
       <created>1431453487898</created>
@@ -799,11 +800,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467021910063</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="done new Input (or think so)">
+      <created>1467733922236</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1467733922236</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151766000" />
+    <option name="totallyTimeSpent" value="154509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1924" height="1082" extended-state="0" />
@@ -823,6 +831,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23489584" sideWeight="0.4966249" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33020833" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -844,7 +853,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -867,7 +875,8 @@
     <MESSAGE value="input progress" />
     <MESSAGE value="convert Input to ecma 6" />
     <MESSAGE value="progress on input" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress on input" />
+    <MESSAGE value="done new Input (or think so)" />
+    <option name="LAST_COMMIT_MESSAGE" value="done new Input (or think so)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1096,14 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMTraversalAndRange.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1151,23 +1152,47 @@
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <caret line="409" column="0" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Input.js">
+    <entry file="file://$PROJECT_DIR$/memo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="39" column="67" selection-start-line="39" selection-start-column="67" selection-end-line="39" selection-end-column="67" />
+        <state relative-caret-position="168">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="1195" column="0" selection-start-line="1195" selection-start-column="0" selection-end-line="1195" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap-3.1.1-dist/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="1858" column="4" selection-start-line="1858" selection-start-column="4" selection-end-line="1858" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="117" column="13" selection-start-line="114" selection-start-column="3" selection-end-line="117" selection-end-column="13" />
+        <state relative-caret-position="171">
+          <caret line="130" column="4" selection-start-line="130" selection-start-column="7" selection-end-line="187" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="892">
+          <caret line="155" column="27" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
           <folding />
         </state>
       </provider>

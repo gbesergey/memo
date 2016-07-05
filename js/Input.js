@@ -1,3 +1,4 @@
+"use strict";
 class Input {
     /** @typedef {(MouseEvent|KeyboardEvent|TouchEvent)} MemoInputEvent*/
 
@@ -27,7 +28,7 @@ class Input {
     next() {
         for (var eventIndex in this._eventBuffer) {
             for (var inputProcessorEntryName in InputProcessor.STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP) {
-                var inputProcessorEntry = Input.STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP[inputProcessorEntryName];
+                var inputProcessorEntry = InputProcessor.STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP[inputProcessorEntryName];
                 if (inputProcessorEntry.startingStateChecker.check(this._graph)) {
                     this._runningInputProcessors.push(inputProcessorEntry.getInputProcessor());
                 }
@@ -104,7 +105,7 @@ class InputPatternMatcher {
      * @return {undefined|boolean}
      */
     next(position, inputEvent) {
-        return this._next();
+        return this._next(position, inputEvent);
     }
 }
 
@@ -118,7 +119,7 @@ class InputProcessor {
             SELECT_NODE: {
                 startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.NOT_SELECTED,
                 getInputProcessor : () => new InputProcessor(
-                    Input.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
+                    InputPatternMatcher.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
                     function (position, inputEvent) {
                         if (position == 0) {
                             this.x = inputEvent.screenX;

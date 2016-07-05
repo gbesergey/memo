@@ -111,65 +111,81 @@ function Memo() {
     this.paper.canvas.style.backgroundColor = "#2b2b2b";
     this.paper.canvas.style.top = 0;
     this.paper.canvas.style.left = 0;
-    // mouse clicks
-    this.paper.canvas.onmousedown = function () {
-        var button = arguments.callee.arguments[0].button;
-        var x = arguments.callee.arguments[0].clientX;
-        var y = arguments.callee.arguments[0].clientY;
-        var ctrlKey = arguments.callee.arguments[0].ctrlKey;
-        var addNodeX = arguments.callee.arguments[0].clientX * self.currentZoom + self.viewX - self.viewWidth / 2;
-        var addNodeY = arguments.callee.arguments[0].clientY * self.currentZoom + self.viewY - self.viewHeight / 2;
-        var clickedElement = self.paper.getElementByPoint(x, y);
-        switch (button) {
-            case self.DRAG_NODE_MOUSE_BUTTON:
-                if (ctrlKey && clickedElement) {
-                    if (clickedElement.node instanceof SVGRectElement) {
-                        //self.addSelectedNode(clickedElement);
-                        self.toggleSelectedNode(clickedElement);
-                    } else if (clickedElement.node instanceof SVGPathElement) {
-                        //self.addSelectedRelationship(self.relationships[clickedElement.data("id")]);
-                        self.toggleSelectedRelationship(self.relationships[clickedElement.data("id")]);
-                    }
-                } else if (!clickedElement) {
-                    self.ctrlPressedOnMouseDown = true;
-                    self.selection.push({x: x, y: y});
-                } else if (!ctrlKey && clickedElement) {
-                    self.clearSelection();
-                    if (clickedElement.node instanceof SVGRectElement) {
-                        self.addSelectedNode(clickedElement);
-                    } else if (clickedElement.node instanceof SVGPathElement) {
-                        self.addSelectedRelationship(self.relationships[clickedElement.data("id")]);
-                    }
-                }
-                break;
-            case self.CREATE_ARC_MOUSE_BUTTON:
-                if (!clickedElement) {
-                    clickedElement = self.addNode(addNodeX, addNodeY);
-                }
-                self.setConnectionBeginElement(clickedElement);
-                break;
-            case self.DELETE_MOUSE_BUTTON:
-                if (clickedElement) {
-                    switch (clickedElement.type) {
-                        case "rect":
-                            // TODO drag by delete mouse button problem
-                            self.removeNode(clickedElement);
-                            break;
-                        case "text":
-                            // TODO drag by delete mouse button problem
-                            self.removeNode(self.nodes[clickedElement.data("nodeId")]);
-                            break;
-                        case "path":
-                            self.removeConnection(clickedElement);
-                            break;
-                    }
-                } else {
-                    self.clearSelection();
-                    self.dragView = true;
-                }
-                break;
-        }
+    
+    
+    
+    
+    
+    // new Input
+    this.input = new Input(this);
+    setTimeout(function () {self.onFrame()}, 1000 / self.FRAME_RATE);
+    this.paper.canvas.onmousedown = function (mouseEvent) {
+        self.input.feed(mouseEvent);
     };
+    
+    
+    
+    
+    
+    // mouse clicks
+    // this.paper.canvas.onmousedown = function () {
+    //     var button = arguments.callee.arguments[0].button;
+    //     var x = arguments.callee.arguments[0].clientX;
+    //     var y = arguments.callee.arguments[0].clientY;
+    //     var ctrlKey = arguments.callee.arguments[0].ctrlKey;
+    //     var addNodeX = arguments.callee.arguments[0].clientX * self.currentZoom + self.viewX - self.viewWidth / 2;
+    //     var addNodeY = arguments.callee.arguments[0].clientY * self.currentZoom + self.viewY - self.viewHeight / 2;
+    //     var clickedElement = self.paper.getElementByPoint(x, y);
+    //     switch (button) {
+    //         case self.DRAG_NODE_MOUSE_BUTTON:
+    //             if (ctrlKey && clickedElement) {
+    //                 if (clickedElement.node instanceof SVGRectElement) {
+    //                     //self.addSelectedNode(clickedElement);
+    //                     self.toggleSelectedNode(clickedElement);
+    //                 } else if (clickedElement.node instanceof SVGPathElement) {
+    //                     //self.addSelectedRelationship(self.relationships[clickedElement.data("id")]);
+    //                     self.toggleSelectedRelationship(self.relationships[clickedElement.data("id")]);
+    //                 }
+    //             } else if (!clickedElement) {
+    //                 self.ctrlPressedOnMouseDown = true;
+    //                 self.selection.push({x: x, y: y});
+    //             } else if (!ctrlKey && clickedElement) {
+    //                 self.clearSelection();
+    //                 if (clickedElement.node instanceof SVGRectElement) {
+    //                     self.addSelectedNode(clickedElement);
+    //                 } else if (clickedElement.node instanceof SVGPathElement) {
+    //                     self.addSelectedRelationship(self.relationships[clickedElement.data("id")]);
+    //                 }
+    //             }
+    //             break;
+    //         case self.CREATE_ARC_MOUSE_BUTTON:
+    //             if (!clickedElement) {
+    //                 clickedElement = self.addNode(addNodeX, addNodeY);
+    //             }
+    //             self.setConnectionBeginElement(clickedElement);
+    //             break;
+    //         case self.DELETE_MOUSE_BUTTON:
+    //             if (clickedElement) {
+    //                 switch (clickedElement.type) {
+    //                     case "rect":
+    //                         // TODO drag by delete mouse button problem
+    //                         self.removeNode(clickedElement);
+    //                         break;
+    //                     case "text":
+    //                         // TODO drag by delete mouse button problem
+    //                         self.removeNode(self.nodes[clickedElement.data("nodeId")]);
+    //                         break;
+    //                     case "path":
+    //                         self.removeConnection(clickedElement);
+    //                         break;
+    //                 }
+    //             } else {
+    //                 self.clearSelection();
+    //                 self.dragView = true;
+    //             }
+    //             break;
+    //     }
+    // };
     this.paper.canvas.onmouseup = function () {
         var button = arguments.callee.arguments[0].button;
         var x = arguments.callee.arguments[0].clientX;
@@ -934,6 +950,12 @@ Memo.prototype.loadMem = function(mem) {
 
 Memo.prototype.selectNode = function(x ,y) {
     this.addSelectedNode(self.paper.getElementByPoint(x, y));
+};
+
+Memo.prototype.onFrame = function() {
+    var self = this;
+    this.input.next();
+    setTimeout(function () {self.onFrame()}, 1000 / self.FRAME_RATE);
 };
 
 var memo;
