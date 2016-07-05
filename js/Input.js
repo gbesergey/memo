@@ -1,46 +1,53 @@
 class Input {
-    /** @typedef {(MouseEvent|KeyboardEvent|TouchEvent)} */
-    InputEvent;
-    
+    /** @typedef {(MouseEvent|KeyboardEvent|TouchEvent)} MemoInputEvent*/
+
+    /**
+     * @param {Graph} graph
+     */
     constructor(graph) {
-        this.graph = graph;
-        /** @type {Array.<InputEvent>} */
-        this.eventBuffer = [];
-        this.runningInputProcessors = [];
+        /** @type {Graph} */
+        this._graph = graph;
+        /** @type {Array.<MemoInputEvent>} */
+        this._eventBuffer = [];
+        /** @type {Array.<InputProcessor>} */
+        this._runningInputProcessors = [];
     }
 
     /**
-     * @param {InputEvent} inputEvent
+     * @param {MemoInputEvent} inputEvent
      * @return {undefined}
      */
     feed(inputEvent) {
-        this.eventBuffer.push(inputEvent);
+        this._eventBuffer.push(inputEvent);
     }
 
     /**
      * @return {undefined}
      */
     next() {
-        for (var eventIndex in this.eventBuffer) {
-            for (var manipulationIndex in Input.MANIPULATIONS) {
-                var manipulation = Input.MANIPULATIONS[manipulationIndex];
-                if (manipulation.isStartingState()) {
-                    this.runningInputProcessors.push(manipulation.getInputProcessor());
+        for (var eventIndex in this._eventBuffer) {
+            for (var inputProcessorEntryName in InputProcessor.STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP) {
+                var inputProcessorEntry = Input.STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP[inputProcessorEntryName];
+                if (inputProcessorEntry.startingStateChecker.check(this._graph)) {
+                    this._runningInputProcessors.push(inputProcessorEntry.getInputProcessor());
                 }
             }
-            for (var inputProcessorIndex in this.runningInputProcessors) {
-                var inputProcessor = this.runningInputProcessors[inputProcessorIndex];
-                var eventProcessingResult = inputProcessor.next(this.eventBuffer[eventIndex]);
+            for (var runningInputProcessorIndex in this._runningInputProcessors) {
+                var runningInputProcessor = this._runningInputProcessors[runningInputProcessorIndex];
+                var eventProcessingResult = runningInputProcessor.next(this._eventBuffer[eventIndex]);
                 if (eventProcessingResult == true) {
-                    inputProcessor.manipulation();
-                    this.runningInputProcessors.splice(inputProcessorIndex, 1);
+                    runningInputProcessor.action(this._graph);
+                    this._runningInputProcessors.splice(runningInputProcessorIndex, 1);
                 } else if (eventProcessingResult === false) {
-                    this.runningInputProcessors.splice(inputProcessorIndex, 1);
+                    this._runningInputProcessors.splice(runningInputProcessorIndex, 1);
                 }
             }
         }
+        this._eventBuffer = [];
     }
+}
 
+class StartingStateChecker {
     /**
      * @return {Object<string, StartingStateChecker>}
      */
@@ -50,48 +57,7 @@ class Input {
             ONLY_NODES_SELECTED: new StartingStateChecker((graph) => graph.selectedNodes.length != 0 && graph.selectedRelationships.length == 0)
         }
     }
-    
-    /**
-     * @return {Object.<string, InputPatternMatcher>}
-     */
-    static get INPUT_PATTERN_MATCHERS() {
-        return {
-            LEFT_CLICK: new InputPatternMatcher(
-                (position, inputEvent) => inputEvent instanceof MouseEvent && inputEvent.button == 0
-            ),
-            MOUSE_MOVE: new InputPatternMatcher(
-                (position, inputEvent) => inputEvent instanceof MouseEvent &&
-                (inputEvent.movementX != 0 || inputEvent.movementY != 0)
-            )
-        }
-    }
 
-    /**
-     * @return {Object.<string, Manipulation>}
-     * @constructor
-     */
-    static get MANIPULATIONS() {
-        // var input = this;
-        return {
-            SELECT_NODE: new Manipulation(
-                Input.STARTING_STATE_CHECKERS.NOT_SELECTED,
-                new InputProcessor(
-                    Input.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
-                    function (position, inputEvent) {
-                        if (position == 0) {
-                            this.x = inputEvent.screenX;
-                            this.y = inputEvent.screenY;
-                        }
-                    }, function () {
-                        this.graph.selectNode(this.x, this.y);
-                    }
-                )
-            )
-        }
-    }
-}
-
-class StartingStateChecker {
     /**
      * @param {function(Graph): boolean} checkerFunction
      */
@@ -111,7 +77,22 @@ class StartingStateChecker {
 
 class InputPatternMatcher {
     /**
-     * @param {function(number, InputEvent): boolean} patternMatchingFunction
+     * @return {Object.<string, InputPatternMatcher>}
+     */
+    static get INPUT_PATTERN_MATCHERS() {
+        return {
+            LEFT_CLICK: new InputPatternMatcher(
+                (position, inputEvent) => inputEvent instanceof MouseEvent && inputEvent.button == 0
+            ),
+            MOUSE_MOVE: new InputPatternMatcher(
+                (position, inputEvent) => inputEvent instanceof MouseEvent &&
+                (inputEvent.movementX != 0 || inputEvent.movementY != 0)
+            )
+        }
+    }
+    
+    /**
+     * @param {function(number, MemoInputEvent): boolean} patternMatchingFunction
      */
     constructor (patternMatchingFunction) {
         this._next = patternMatchingFunction;
@@ -119,8 +100,8 @@ class InputPatternMatcher {
 
     /**
      * @param {number} position
-     * @param {InputEvent} inputEvent
-     * @return {boolean}
+     * @param {MemoInputEvent} inputEvent
+     * @return {undefined|boolean}
      */
     next(position, inputEvent) {
         return this._next();
@@ -128,11 +109,33 @@ class InputPatternMatcher {
 }
 
 class InputProcessor {
+    /**
+     * @return {Object.<string, Object<string, StartingStateChecker|function():InputProcessor>>}
+     * @constructor
+     */
+    static get STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP() {
+        return {
+            SELECT_NODE: {
+                startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.NOT_SELECTED,
+                getInputProcessor : () => new InputProcessor(
+                    Input.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
+                    function (position, inputEvent) {
+                        if (position == 0) {
+                            this.x = inputEvent.screenX;
+                            this.y = inputEvent.screenY;
+                        }
+                    }, function (graph) {
+                        graph.selectNode(this.x, this.y);
+                    }
+                )
+            }
+        }
+    }
 
     /**
      * @param {InputPatternMatcher} inputPatternMatcher
-     * @param {function(number, InputEvent)} parametersCollector
-     * @param {function(): undefined} action
+     * @param {function(number, MemoInputEvent)} parametersCollector
+     * @param {function(Graph): undefined} action
      */
     constructor(inputPatternMatcher, parametersCollector, action) {
         this._position = 0;
@@ -142,8 +145,8 @@ class InputProcessor {
     }
 
     /**
-     * @param {InputEvent} inputEvent
-     * @return {boolean}
+     * @param {MemoInputEvent} inputEvent
+     * @return {undefined|boolean}
      */
     next(inputEvent) {
         var result = this._inputPatternMatcher.next(this._position,
@@ -154,17 +157,12 @@ class InputProcessor {
         this._position++;
         return result;
     }
-}
-
-
-class Manipulation {
 
     /**
-     * @param {StartingStateChecker} startingStateChecker
-     * @param {InputProcessor} inputProcessor
+     * @param {Graph} graph
+     * @return undefined
      */
-    constructor(startingStateChecker, inputProcessor) {
-        this._startingStateChecker = startingStateChecker;
-        this._inputProcessor = inputProcessor;
+    action(graph) {
+        this._action(graph);
     }
 }
