@@ -186,50 +186,50 @@ function Memo() {
     //             break;
     //     }
     // };
-    this.paper.canvas.onmouseup = function () {
-        var button = arguments.callee.arguments[0].button;
-        var x = arguments.callee.arguments[0].clientX;
-        var y = arguments.callee.arguments[0].clientY;
-        var addNodeX = arguments.callee.arguments[0].clientX * self.currentZoom + self.viewX - self.viewWidth / 2;
-        var addNodeY = arguments.callee.arguments[0].clientY * self.currentZoom + self.viewY - self.viewHeight / 2;
-        var releasedElement = self.paper.getElementByPoint(x, y);
-        switch (button) {
-            case self.DRAG_NODE_MOUSE_BUTTON:
-                if (self.ctrlPressedOnMouseDown) {
-                    self.ctrlPressedOnMouseDown = false;
-                    var pathString = "M" + (self.selection[0].x * self.currentZoom + self.viewX - self.viewWidth / 2) + " " + (self.selection[0].y* self.currentZoom + self.viewY - self.viewHeight / 2);
-                    for (var i = 1; i < self.selection.length; i++) {
-                        pathString += "L" + (self.selection[i].x * self.currentZoom + self.viewX - self.viewWidth / 2) + " " + (self.selection[i].y* self.currentZoom + self.viewY - self.viewHeight / 2);
-                    }
-                    pathString += "Z";
-                    for (var nodeId in self.nodes) {
-                        var node = self.nodes[nodeId];
-                        var bbox = node.getBBox();
-                        if (Raphael.isPointInsidePath(pathString, bbox.x, bbox.y) && Raphael.isPointInsidePath(pathString, bbox.x, bbox.y2)
-                            && Raphael.isPointInsidePath(pathString, bbox.x2, bbox.y) && Raphael.isPointInsidePath(pathString, bbox.x2, bbox.y2)) {
-                            if (node.data("id") in self.selectedNodes) {
-                                self.removeSelectedNode(node);
-                            } else {
-                                self.addSelectedNode(node);
-                            }
-                        }
-                    }
-                    self.selection = [];
-                }
-                break;
-            case self.CREATE_ARC_MOUSE_BUTTON:
-                if (!releasedElement) {
-                    releasedElement = self.addNode(addNodeX, addNodeY);
-                }
-                if ((self.getConnectionBeginElement() !== releasedElement) && (releasedElement.type === "rect")) {
-                    self.addConnection(self.getConnectionBeginElement().data("id"), releasedElement.data("id"))
-                }
-                break;
-            case self.DELETE_MOUSE_BUTTON:
-                self.dragView = false;
-                break;
-        }
-    };
+    // this.paper.canvas.onmouseup = function () {
+    //     var button = arguments.callee.arguments[0].button;
+    //     var x = arguments.callee.arguments[0].clientX;
+    //     var y = arguments.callee.arguments[0].clientY;
+    //     var addNodeX = arguments.callee.arguments[0].clientX * self.currentZoom + self.viewX - self.viewWidth / 2;
+    //     var addNodeY = arguments.callee.arguments[0].clientY * self.currentZoom + self.viewY - self.viewHeight / 2;
+    //     var releasedElement = self.paper.getElementByPoint(x, y);
+    //     switch (button) {
+    //         case self.DRAG_NODE_MOUSE_BUTTON:
+    //             if (self.ctrlPressedOnMouseDown) {
+    //                 self.ctrlPressedOnMouseDown = false;
+    //                 var pathString = "M" + (self.selection[0].x * self.currentZoom + self.viewX - self.viewWidth / 2) + " " + (self.selection[0].y* self.currentZoom + self.viewY - self.viewHeight / 2);
+    //                 for (var i = 1; i < self.selection.length; i++) {
+    //                     pathString += "L" + (self.selection[i].x * self.currentZoom + self.viewX - self.viewWidth / 2) + " " + (self.selection[i].y* self.currentZoom + self.viewY - self.viewHeight / 2);
+    //                 }
+    //                 pathString += "Z";
+    //                 for (var nodeId in self.nodes) {
+    //                     var node = self.nodes[nodeId];
+    //                     var bbox = node.getBBox();
+    //                     if (Raphael.isPointInsidePath(pathString, bbox.x, bbox.y) && Raphael.isPointInsidePath(pathString, bbox.x, bbox.y2)
+    //                         && Raphael.isPointInsidePath(pathString, bbox.x2, bbox.y) && Raphael.isPointInsidePath(pathString, bbox.x2, bbox.y2)) {
+    //                         if (node.data("id") in self.selectedNodes) {
+    //                             self.removeSelectedNode(node);
+    //                         } else {
+    //                             self.addSelectedNode(node);
+    //                         }
+    //                     }
+    //                 }
+    //                 self.selection = [];
+    //             }
+    //             break;
+    //         case self.CREATE_ARC_MOUSE_BUTTON:
+    //             if (!releasedElement) {
+    //                 releasedElement = self.addNode(addNodeX, addNodeY);
+    //             }
+    //             if ((self.getConnectionBeginElement() !== releasedElement) && (releasedElement.type === "rect")) {
+    //                 self.addConnection(self.getConnectionBeginElement().data("id"), releasedElement.data("id"))
+    //             }
+    //             break;
+    //         case self.DELETE_MOUSE_BUTTON:
+    //             self.dragView = false;
+    //             break;
+    //     }
+    // };
     window.onmousewheel = function (e) {
         var cursorX = self.viewX - (arguments.callee.arguments[0].clientX * self.currentZoom - self.viewWidth / 2);
         var cursorY = self.viewY - (arguments.callee.arguments[0].clientY * self.currentZoom - self.viewHeight / 2);
@@ -956,6 +956,35 @@ Memo.prototype.onFrame = function() {
     var self = this;
     this.input.next();
     setTimeout(function () {self.onFrame()}, 1000 / self.FRAME_RATE);
+};
+
+Memo.prototype.getObject = function(x, y) {
+    var result = null;
+    var element = self.paper.getElementByPoint(x, y);
+    switch (element.type) {
+        case "rect":
+            result = this.nodes[element.data("id")];
+            break;
+        case "text":
+            result = this.nodes[element.data("nodeId")];
+            break;
+        case "path":
+            result = this.relationships[element.data("id")];
+            break;
+    }
+    return result;
+};
+
+Memo.prototype.createEdge = function(startX, startY, endX, endY) {
+    var from = this.getObject(startX, startY);
+    var to = this.getObject(endX, endY);
+    if (from == null || from.type != "rect") {
+        this.addNode(startX, startY);
+    }
+    if (to == null || to.type != "rect") {
+        this.addNode(endX, endY);
+    }
+    this.addConnection(from.data("id"), to.data[id]);
 };
 
 var memo;

@@ -33,14 +33,15 @@ class Input {
                     this._runningInputProcessors.push(inputProcessorEntry.getInputProcessor());
                 }
             }
-            for (var runningInputProcessorIndex in this._runningInputProcessors) {
-                var runningInputProcessor = this._runningInputProcessors[runningInputProcessorIndex];
+            // reverse "for" for splice to work correctly
+            for (var i = this._runningInputProcessors.length - 1; i >= 0; i--) {
+                var runningInputProcessor = this._runningInputProcessors[i];
                 var eventProcessingResult = runningInputProcessor.next(this._eventBuffer[eventIndex]);
-                if (eventProcessingResult == true) {
-                    runningInputProcessor.action(this._graph);
-                    this._runningInputProcessors.splice(runningInputProcessorIndex, 1);
+                if (eventProcessingResult != null && typeof eventProcessingResult == "object") {
+                    runningInputProcessor.action(this._graph, eventProcessingResult);
+                    this._runningInputProcessors.splice(i, 1);
                 } else if (eventProcessingResult === false) {
-                    this._runningInputProcessors.splice(runningInputProcessorIndex, 1);
+                    this._runningInputProcessors.splice(i, 1);
                 }
             }
         }
@@ -54,6 +55,7 @@ class StartingStateChecker {
      */
     static get STARTING_STATE_CHECKERS() {
         return {
+            ANY: new StartingStateChecker((graph) => true),
             NOT_SELECTED: new StartingStateChecker((graph) => graph.selection.length == 0),
             ONLY_NODES_SELECTED: new StartingStateChecker((graph) => graph.selectedNodes.length != 0 && graph.selectedRelationships.length == 0)
         }
@@ -82,36 +84,93 @@ class InputPatternMatcher {
      */
     static get INPUT_PATTERN_MATCHERS() {
         return {
-            LEFT_CLICK: new InputPatternMatcher(
-                (position, inputEvent) => inputEvent instanceof MouseEvent && inputEvent.button == 0
+            LEFT_CLICK: () => (new InputPatternMatcher(
+                    [
+                        {
+                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0, 
+                            readParams: (inputEvent) => ({x: inputEvent.screenX, y: inputEvent.screenY})
+                        }
+                    ], 
+                    null, 500)
             ),
-            MOUSE_MOVE: new InputPatternMatcher(
-                (position, inputEvent) => inputEvent instanceof MouseEvent &&
-                (inputEvent.movementX != 0 || inputEvent.movementY != 0)
-            )
+            MIDDLE_CLICK: () => (new InputPatternMatcher(
+                    [
+                        {
+                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 1,
+                            readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
+                        }
+                    ], null, 500)
+            ),
+            MOUSE_MOVE: () => (new InputPatternMatcher(
+                    [
+                        {
+                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousemove" &&
+        (inputEvent.movementX != 0 || inputEvent.movementY != 0),
+                            readParams: (inputEvent) => ({})
+                        }
+                    ], null, 500)
+            ),
+            EDGE: () => (new InputPatternMatcher(
+                    [
+                        {
+                            match: (inputEvent) => {debug("1"); return inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" &&
+                            inputEvent.button == 1},
+                            readParams: (inputEvent) => ({startX: inputEvent.screenX, startY: inputEvent.screenY})
+                        },
+                        {
+                            match: (inputEvent) => {debug("2"); return inputEvent instanceof MouseEvent && inputEvent.type == "mouseup" && inputEvent.button == 1},
+                            readParams: (inputEvent) => ({endX: inputEvent.screenX, endY: inputEvent.screenY})
+                        }
+                    ], null, 500)
+            ),
         }
+    }
+
+    /** @typedef {{}} InputData */
+    
+    /**
+     * @param {Array.<{match: function(MemoInputEvent):boolean, readParams: function(MemoInputEvent):InputData}>} patternMatchingFunctions
+     * @param {function(MemoInputEvent): boolean} cancelFunction
+     * @param {number} timeout
+     */
+    constructor (patternMatchingFunctions, cancelFunction, timeout) {
+        this._patternMatchingFunctions = patternMatchingFunctions;
+        this._cancelFunction = cancelFunction;
+        this._timeout = timeout;
+        this._currentMatchingFunction = 0;
+        this._inputData = {};
     }
     
     /**
-     * @param {function(number, MemoInputEvent): boolean} patternMatchingFunction
-     */
-    constructor (patternMatchingFunction) {
-        this._next = patternMatchingFunction;
-    }
-
-    /**
-     * @param {number} position
      * @param {MemoInputEvent} inputEvent
-     * @return {undefined|boolean}
+     * @return {undefined|boolean|InputData}
      */
-    next(position, inputEvent) {
-        return this._next(position, inputEvent);
+    next(inputEvent) {
+        this._startTime = this._startTime == undefined ? Date.now() : this._startTime;
+        var result = null;
+        if (Date.now() - this._startTime > this._timeout) {
+            result = false;
+        } else if (this._cancelFunction && this._cancelFunction(inputEvent)) {
+            result = false;
+        } else {
+            if (this._patternMatchingFunctions[this._currentMatchingFunction].match(inputEvent)) {
+                var inputData = this._patternMatchingFunctions[this._currentMatchingFunction].readParams(inputEvent);
+                for (var propName in inputData) {
+                    this._inputData[propName] = inputData[propName]; 
+                }
+                this._currentMatchingFunction++;
+                if (this._currentMatchingFunction > this._patternMatchingFunctions.length) {
+                    result = this._inputData;
+                }
+            }
+        }
+        return result;
     }
 }
 
 class InputProcessor {
     /**
-     * @return {Object.<string, Object<string, StartingStateChecker|function():InputProcessor>>}
+     * @return {Object.<string, {startingStateChecker: StartingStateChecker, getInputProcessor: function():InputProcessor}>}
      * @constructor
      */
     static get STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP() {
@@ -119,29 +178,41 @@ class InputProcessor {
             SELECT_NODE: {
                 startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.NOT_SELECTED,
                 getInputProcessor : () => new InputProcessor(
-                    InputPatternMatcher.INPUT_PATTERN_MATCHERS.LEFT_CLICK,
-                    function (position, inputEvent) {
-                        if (position == 0) {
-                            this.x = inputEvent.screenX;
-                            this.y = inputEvent.screenY;
-                        }
-                    }, function (graph) {
-                        graph.selectNode(this.x, this.y);
+                    InputPatternMatcher.INPUT_PATTERN_MATCHERS.LEFT_CLICK(),
+                    function (graph, inputData) {
+                        graph.selectNode(inputData.x, inputData.y);
                     }
                 )
-            }
+            },
+            CREATE_NODE: {
+                startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.ANY,
+                getInputProcessor : () => new InputProcessor(
+                    InputPatternMatcher.INPUT_PATTERN_MATCHERS.MIDDLE_CLICK(),
+                    function (graph, inputData) {
+                        var x = inputData.x * this._graph.currentZoom + this._graph.viewX - this._graph.viewWidth / 2;
+                        var y = inputData.y * this._graph.currentZoom + this._graph.viewY - this._graph.viewHeight / 2;
+                        graph.addNode(x, y);
+                    }
+                )
+            },
+            CREATE_ARK: {
+                startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.ANY,
+                getInputProcessor : () => new InputProcessor(
+                    InputPatternMatcher.INPUT_PATTERN_MATCHERS.EDGE(),
+                    function (graph, inputData) {
+                        graph.createEdge(inputData.startX, inputData.startY, inputData.endX, inputData.endY);
+                    }
+                )
+            },
         }
     }
 
     /**
      * @param {InputPatternMatcher} inputPatternMatcher
-     * @param {function(number, MemoInputEvent)} parametersCollector
-     * @param {function(Graph): undefined} action
+     * @param {function(Graph, InputData): undefined} action
      */
-    constructor(inputPatternMatcher, parametersCollector, action) {
-        this._position = 0;
+    constructor(inputPatternMatcher, action) {
         this._inputPatternMatcher = inputPatternMatcher;
-        this._parametersCollector = parametersCollector;
         this._action = action;
     }
 
@@ -150,20 +221,19 @@ class InputProcessor {
      * @return {undefined|boolean}
      */
     next(inputEvent) {
-        var result = this._inputPatternMatcher.next(this._position,
-            inputEvent);
-        if (result !== false) {
-            this._parametersCollector(this.position, inputEvent);
-        }
-        this._position++;
-        return result;
+        return this._inputPatternMatcher.next(inputEvent);
     }
 
     /**
      * @param {Graph} graph
+     * @param {InputData} inputData
      * @return undefined
      */
-    action(graph) {
-        this._action(graph);
+    action(graph, inputData) {
+        this._action(graph, inputData);
     }
+}
+
+function debug(param) {
+    var a = param;
 }

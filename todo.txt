@@ -1,0 +1,5 @@
+refactor patternparameterscollection
+	integrate into patternmatchers
+repeated patternmatch
+	case - mouse move
+maybe replace InputProcessors with tuples of startingstate, patternmatcher and action 
