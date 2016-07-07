@@ -1003,11 +1003,11 @@ Memo.prototype.yScreenToGlobal = function(y) {
 };
 
 Memo.prototype.xGlobalToScreen = function(x) {
-    return x / this.currentZoom - this.viewX + this.viewWidth / 2;
+    return (x - this.viewX + this.viewWidth / 2) / this.currentZoom;
 };
 
 Memo.prototype.yGlobalToScreen = function(y) {
-    return y / this.currentZoom - this.viewY + this.viewHeight / 2;
+    return (y - this.viewY + this.viewHeight / 2) / this.currentZoom;
 };
 
 var memo;
