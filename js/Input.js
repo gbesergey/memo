@@ -29,8 +29,9 @@ class Input {
         for (var eventIndex in this._eventBuffer) {
             for (var inputProcessorEntryName in InputProcessor.STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP) {
                 var inputProcessorEntry = InputProcessor.STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP[inputProcessorEntryName];
-                if (inputProcessorEntry.startingStateChecker.check(this._graph)) {
-                    this._runningInputProcessors.push(inputProcessorEntry.getInputProcessor());
+                var patternMatcher = inputProcessorEntry.getInputProcessor();
+                if (inputProcessorEntry.startingStateChecker.check(this._graph) && patternMatcher.firstMatch(this._eventBuffer[eventIndex])) {
+                    this._runningInputProcessors.push(patternMatcher);
                 }
             }
             // "reverse for" for splice to work correctly
@@ -96,10 +97,11 @@ class InputPatternMatcher {
                     [
                         {
                             match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0, 
-                            readParams: (inputEvent) => ({x: inputEvent.screenX, y: inputEvent.screenY})
+                            readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
                         }
                     ],
-                    null, InputPatternMatcher.DEFAULT_TIMEOUT)
+                    (inputEvent) => !(inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0), 
+                    InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
             MIDDLE_CLICK: () => (new InputPatternMatcher(
                     [
@@ -107,7 +109,8 @@ class InputPatternMatcher {
                             match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 1,
                             readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
                         }
-                    ], null, InputPatternMatcher.DEFAULT_TIMEOUT)
+                    ], () => !((inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 1), 
+                    InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
             MOUSE_MOVE: () => (new InputPatternMatcher(
                     [
@@ -145,8 +148,16 @@ class InputPatternMatcher {
         this._patternMatchingFunctions = patternMatchingFunctions;
         this._cancelFunction = cancelFunction;
         this._timeout = timeout;
-        this._currentMatchingFunction = 0;
+        this._currentMatchingFunction = 1;
         this._inputData = {};
+    }
+
+    /**
+     * @param {MemoInputEvent} inputEvent
+     * @return {boolean}
+     */
+    firstMatch(inputEvent) {
+        return this._patternMatchingFunctions[0].match(inputEvent);
     }
     
     /**
@@ -188,7 +199,7 @@ class InputProcessor {
                 getInputProcessor : () => new InputProcessor(
                     InputPatternMatcher.INPUT_PATTERN_MATCHERS.LEFT_CLICK(),
                     function (graph, inputData) {
-                        graph.selectNode(inputData.x, inputData.y);
+                        graph.toggleSelection(graph.xScreenToGlobal(inputData.x), graph.yScreenToGlobal(inputData.y));
                     }
                 )
             },
@@ -221,6 +232,14 @@ class InputProcessor {
     constructor(inputPatternMatcher, action) {
         this._inputPatternMatcher = inputPatternMatcher;
         this._action = action;
+    }
+
+    /**
+     * @param {MemoInputEvent} inputEvent
+     * @return {boolean}
+     */
+    firstMatch(inputEvent) {
+        return this._inputPatternMatcher.firstMatch(inputEvent);
     }
 
     /**

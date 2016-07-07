@@ -122,24 +122,24 @@ function Memo() {
     this.paper.canvas.onmousedown = function (mouseEvent) {
         self.input.feed(mouseEvent);
     };
-    this.paper.canvas.onmouseup = function (mouseEvent) {
-        self.input.feed(mouseEvent);
-    };
-    window.onmousewheel = function (mouseEvent) {
-        self.input.feed(mouseEvent);
-    };
-    window.onmousemove = function (mouseEvent) {
-        self.input.feed(mouseEvent);
-    };
-    window.document.onmouseout = function (mouseEvent) {
-        self.input.feed(mouseEvent);
-    };
-    window.onkeydown = function (mouseEvent) {
-        self.input.feed(mouseEvent);
-    };
-    window.onkeypress = function (mouseEvent) {
-        self.input.feed(mouseEvent);
-    };
+    // this.paper.canvas.onmouseup = function (mouseEvent) {
+    //     self.input.feed(mouseEvent);
+    // };
+    // window.onmousewheel = function (mouseEvent) {
+    //     self.input.feed(mouseEvent);
+    // };
+    // window.onmousemove = function (mouseEvent) {
+    //     self.input.feed(mouseEvent);
+    // };
+    // window.document.onmouseout = function (mouseEvent) {
+    //     self.input.feed(mouseEvent);
+    // };
+    // window.onkeydown = function (mouseEvent) {
+    //     self.input.feed(mouseEvent);
+    // };
+    // window.onkeypress = function (mouseEvent) {
+    //     self.input.feed(mouseEvent);
+    // };
     
     // mouse clicks
     // this.paper.canvas.onmousedown = function () {
@@ -244,217 +244,189 @@ function Memo() {
     //             break;
     //     }
     // };
-    window.onmousewheel = function (e) {
-        var cursorX = self.viewX - (arguments.callee.arguments[0].clientX * self.currentZoom - self.viewWidth / 2);
-        var cursorY = self.viewY - (arguments.callee.arguments[0].clientY * self.currentZoom - self.viewHeight / 2);
-        // up
-        if (e.wheelDelta >= 0) {
-            self.requestedMouseZoom /= self.ZOOM_MOUSE_FACTOR * e.wheelDelta;
-            self.animateZoom(self.viewX, self.viewY);
-            // down
-        } else {
-            self.requestedMouseZoom *= self.ZOOM_MOUSE_FACTOR * (-e.wheelDelta);
-            self.animateZoom(self.viewX, self.viewY);
-        }
-    };
-    window.onmousemove = function (e) {
-		if (self.ctrlPressedOnMouseDown && e.button == self.DRAG_NODE_MOUSE_BUTTON) {
-            self.selection.push({x: e.clientX, y: e.clientY});
-//			if (!self.leftScroll && (e.x <= window.innerWidth * self.PAN_ZONE_PART)) {
-//				self.leftScroll = true;
-//				self.panLeft();
-//			} else if (!(e.x <= window.innerWidth * self.PAN_ZONE_PART)) {
-//				self.leftScroll = false;
-//				clearTimeout(self.leftScrollTimeout);
-//			}
-//			if (!self.rightScroll && (e.x >= (window.innerWidth * (1 - self.PAN_ZONE_PART)))) {
-//				self.rightScroll = true;
-//				self.panRight();
-//			} else if (!(e.x >= (window.innerWidth * (1 - self.PAN_ZONE_PART)))) {
-//				self.rightScroll = false;
-//				clearTimeout(self.rightScrollTimeout);
-//			}
-//			if (!self.topScroll && (e.y <= (window.innerHeight * self.PAN_ZONE_PART))) {
-//				self.topScroll = true;
-//				self.panUp();
-//			} else if (!(e.y <= (window.innerHeight * self.PAN_ZONE_PART))) {
-//				self.topScroll = false;
-//				clearTimeout(self.topScrollTimeout);
-//			}
-//			if (!self.bottomScroll && (e.y >= (window.innerHeight * (1 - self.PAN_ZONE_PART)))) {
-//				self.bottomScroll = true;
-//				self.panDown();
-//			} else if (!(e.y >= (window.innerHeight * (1 - self.PAN_ZONE_PART)))) {
-//				self.bottomScroll = false;
-//				clearTimeout(self.bottomScrollTimeout);
-//			}
-		} else if (self.dragView) {
-            self.setView(self.currentZoom, self.viewX - e.webkitMovementX * self.currentZoom, self.viewY - e.webkitMovementY * self.currentZoom);
-        }
-    };
-    window.document.onmouseout = function () {
-        self.leftScroll = false;
-        clearTimeout(self.leftScrollTimeout);
-        self.rightScroll = false;
-        clearTimeout(self.rightScrollTimeout);
-        self.topScroll = false;
-        clearTimeout(self.topScrollTimeout);
-        self.bottomScroll = false;
-        clearTimeout(self.bottomScrollTimeout);
-    };
-    // keyboard
-    window.onkeydown = function (e) {
-        var result = true;
-        switch (e.keyCode) {
-            // backspace
-            case 8:
-                for (var nodeId in self.selectedNodes) {
-                    var nodeText = self.selectedNodes[nodeId].text.attr("text");
-                    self.selectedNodes[nodeId].text.attr({text: nodeText.substring(0, nodeText.length - 1)});
-                    self.serializableNodes[nodeId].text = nodeText.substring(0, nodeText.length - 1);
-                }
-                for (var relId in self.selectedRelationships) {
-                    var relText = self.selectedRelationships[relId].text.attr("text");
-                    self.selectedRelationships[relId].text.attr({text: relText.substring(0, relText.length - 1)});
-                    self.serializableRelationships[relId].text = relText.substring(0, relText.length - 1);
-                }
-                if (!isEmpty(self.selectedNodes) || !isEmpty(self.selectedRelationships)) {
-                    result = false;
-                }
-                break;
-            // enter
-            case 13:
-                for (var nodeId in self.selectedNodes) {
-                    var nodeText = self.selectedNodes[nodeId].text.attr("text");
-                    self.selectedNodes[nodeId].text.attr({text: nodeText + "\n"});
-                    self.serializableNodes[nodeId].text = nodeText + "\n";
-                }
-                for (var relId in self.selectedRelationships) {
-                    var relText = self.selectedRelationships[relId].text.attr("text");
-                    self.selectedRelationships[relId].text.attr({text: relText + "\n"});
-                    self.serializableRelationships[relId].text = relText + "\n";
-                }
-                break;
-            // escape
-            case 27:
-                    self.clearSelection();
-                break;
-            // left arrow
-            case 37:
-                self.setView(self.currentZoom, self.viewX - self.PAN_KEYBOARD_STEP, self.viewY);
-                break;
-            // up arrow
-            case 38:
-                self.setView(self.currentZoom, self.viewX, self.viewY - self.PAN_KEYBOARD_STEP);
-                break;
-            // right arrow
-            case 39:
-                self.setView(self.currentZoom, self.viewX + self.PAN_KEYBOARD_STEP, self.viewY);
-                break;
-            // down arrow
-            case 40:
-                self.setView(self.currentZoom, self.viewX, self.viewY + self.PAN_KEYBOARD_STEP);
-                break;
-            // delete
-            case 46:
-                for (var nodeId in self.selectedNodes) {
-                    self.selectedNodes[nodeId].text.attr({text: ""});
-                    self.serializableNodes[nodeId].text = "";
-                }
-                for (var relId in self.selectedRelationships) {
-                    self.selectedRelationships[relId].text.attr({text: ""});
-                    self.serializableRelationships[relId].text = "";
-                }
-                break;
-        }
-        for (var nodeId in self.selectedNodes) {
-            self.updateNodeSize(self.selectedNodes[nodeId]);
-        }
-        return result;
-    };
-    window.onkeypress = function (e) {
-        if (!isEmpty(self.selectedNodes) || !isEmpty(self.selectedRelationships)) {
-            for (var nodeId in self.selectedNodes) {
-                var nodeText = self.selectedNodes[nodeId].text.attr("text") + String.fromCharCode(e.keyCode);
-                self.selectedNodes[nodeId].text.attr({text: nodeText});
-                self.serializableNodes[nodeId].text = nodeText;
-            }
-            for (var relId in self.selectedRelationships) {
-                var relText = self.selectedRelationships[relId].text.attr("text") + String.fromCharCode(e.keyCode);
-                self.selectedRelationships[relId].text.attr({text: relText});
-                self.serializableRelationships[relId].text = relText;
-            }
-        } else {
-            switch (e.keyCode) {
-                // e
-                case 101:
-                    var mem = document.getElementById("memo").firstChild;
-                    var uriContent = "data:image/svg+xml;filename=filename.svg," + encodeURIComponent((new XMLSerializer()).serializeToString(mem));
-                    var downloadLink = document.createElement("a");
-                    downloadLink.href = uriContent;
-                    downloadLink.download = "mem.svg";
-                    downloadLink.click();
-                    break;
-                // s
-                case 115:
-                    var mem = JSON.stringify({
-                        lastNodeId: self.lastNodeId,
-                        lastConnectionId: self.lastConnectionId,
-                        serializableNodes: self.serializableNodes,
-                        serializableRelationships: self.serializableRelationships
-                    },function(k, v) {
-                        var result;
-                        if (k == 'text') {
-                            result = v.replace(/ /g, '\u0027');
-                        } else {
-                            result = v;
-                        }
-                        return result;
-                    });
-                    var uriContent = "data:application/json;filename=filename.json," + mem;
-                    var downloadLink = document.createElement("a");
-                    downloadLink.href = uriContent;
-                    downloadLink.download = "mem.json";
-                    downloadLink.click();
-                    break;
-                // o
-                case 111:
-                    var loadMem = function(e) {
-                        var files = e.target.files;
-                        var file = files[0];
-                        var reader = new FileReader();
-                        reader.onload = function(e) {
-                            var mem = JSON.parse(e.target.result, function(k, v) {
-                                var result;
-                                if (k == 'text') {
-                                    result = v.replace(/\u0027/g, ' ');
-                                } else {
-                                    result = v;
-                                }
-                                return result;
-                            });
-                            self.loadMem(mem);
-                        };
-                        reader.readAsText(file);
-                    };
-                    var textInput = document.createElement("input");
-                    textInput.type = "file";
-                    textInput.accept = ".json";
-                    textInput.onchange = loadMem;
-                    textInput.click();
-                    break;
-                // plus
-                case 43:
-                    self.setView(self.currentZoom / self.ZOOM_KEYBOARD_FACTOR, self.viewX + self.viewWidth / 2, self.viewY + self.viewHeight / 2);
-                    break;
-                // minus
-                case 45:
-                    self.setView(self.currentZoom * self.ZOOM_KEYBOARD_FACTOR, self.viewX + self.viewWidth / 2, self.viewY + self.viewHeight / 2);
-                    break;
-            }
-            ;
-        }
-    };
+    // window.onmousewheel = function (e) {
+    //     var cursorX = self.viewX - (arguments.callee.arguments[0].clientX * self.currentZoom - self.viewWidth / 2);
+    //     var cursorY = self.viewY - (arguments.callee.arguments[0].clientY * self.currentZoom - self.viewHeight / 2);
+    //     // up
+    //     if (e.wheelDelta >= 0) {
+    //         self.requestedMouseZoom /= self.ZOOM_MOUSE_FACTOR * e.wheelDelta;
+    //         self.animateZoom(self.viewX, self.viewY);
+    //         // down
+    //     } else {
+    //         self.requestedMouseZoom *= self.ZOOM_MOUSE_FACTOR * (-e.wheelDelta);
+    //         self.animateZoom(self.viewX, self.viewY);
+    //     }
+    // };
+    // window.onmousemove = function (e) {
+		// if (self.ctrlPressedOnMouseDown && e.button == self.DRAG_NODE_MOUSE_BUTTON) {
+    //         self.selection.push({x: e.clientX, y: e.clientY});
+		// } else if (self.dragView) {
+    //         self.setView(self.currentZoom, self.viewX - e.webkitMovementX * self.currentZoom, self.viewY - e.webkitMovementY * self.currentZoom);
+    //     }
+    // };
+    // window.document.onmouseout = function () {
+    //     self.leftScroll = false;
+    //     clearTimeout(self.leftScrollTimeout);
+    //     self.rightScroll = false;
+    //     clearTimeout(self.rightScrollTimeout);
+    //     self.topScroll = false;
+    //     clearTimeout(self.topScrollTimeout);
+    //     self.bottomScroll = false;
+    //     clearTimeout(self.bottomScrollTimeout);
+    // };
+    // // keyboard
+    // window.onkeydown = function (e) {
+    //     var result = true;
+    //     switch (e.keyCode) {
+    //         // backspace
+    //         case 8:
+    //             for (var nodeId in self.selectedNodes) {
+    //                 var nodeText = self.selectedNodes[nodeId].text.attr("text");
+    //                 self.selectedNodes[nodeId].text.attr({text: nodeText.substring(0, nodeText.length - 1)});
+    //                 self.serializableNodes[nodeId].text = nodeText.substring(0, nodeText.length - 1);
+    //             }
+    //             for (var relId in self.selectedRelationships) {
+    //                 var relText = self.selectedRelationships[relId].text.attr("text");
+    //                 self.selectedRelationships[relId].text.attr({text: relText.substring(0, relText.length - 1)});
+    //                 self.serializableRelationships[relId].text = relText.substring(0, relText.length - 1);
+    //             }
+    //             if (!isEmpty(self.selectedNodes) || !isEmpty(self.selectedRelationships)) {
+    //                 result = false;
+    //             }
+    //             break;
+    //         // enter
+    //         case 13:
+    //             for (var nodeId in self.selectedNodes) {
+    //                 var nodeText = self.selectedNodes[nodeId].text.attr("text");
+    //                 self.selectedNodes[nodeId].text.attr({text: nodeText + "\n"});
+    //                 self.serializableNodes[nodeId].text = nodeText + "\n";
+    //             }
+    //             for (var relId in self.selectedRelationships) {
+    //                 var relText = self.selectedRelationships[relId].text.attr("text");
+    //                 self.selectedRelationships[relId].text.attr({text: relText + "\n"});
+    //                 self.serializableRelationships[relId].text = relText + "\n";
+    //             }
+    //             break;
+    //         // escape
+    //         case 27:
+    //                 self.clearSelection();
+    //             break;
+    //         // left arrow
+    //         case 37:
+    //             self.setView(self.currentZoom, self.viewX - self.PAN_KEYBOARD_STEP, self.viewY);
+    //             break;
+    //         // up arrow
+    //         case 38:
+    //             self.setView(self.currentZoom, self.viewX, self.viewY - self.PAN_KEYBOARD_STEP);
+    //             break;
+    //         // right arrow
+    //         case 39:
+    //             self.setView(self.currentZoom, self.viewX + self.PAN_KEYBOARD_STEP, self.viewY);
+    //             break;
+    //         // down arrow
+    //         case 40:
+    //             self.setView(self.currentZoom, self.viewX, self.viewY + self.PAN_KEYBOARD_STEP);
+    //             break;
+    //         // delete
+    //         case 46:
+    //             for (var nodeId in self.selectedNodes) {
+    //                 self.selectedNodes[nodeId].text.attr({text: ""});
+    //                 self.serializableNodes[nodeId].text = "";
+    //             }
+    //             for (var relId in self.selectedRelationships) {
+    //                 self.selectedRelationships[relId].text.attr({text: ""});
+    //                 self.serializableRelationships[relId].text = "";
+    //             }
+    //             break;
+    //     }
+    //     for (var nodeId in self.selectedNodes) {
+    //         self.updateNodeSize(self.selectedNodes[nodeId]);
+    //     }
+    //     return result;
+    // };
+    // window.onkeypress = function (e) {
+    //     if (!isEmpty(self.selectedNodes) || !isEmpty(self.selectedRelationships)) {
+    //         for (var nodeId in self.selectedNodes) {
+    //             var nodeText = self.selectedNodes[nodeId].text.attr("text") + String.fromCharCode(e.keyCode);
+    //             self.selectedNodes[nodeId].text.attr({text: nodeText});
+    //             self.serializableNodes[nodeId].text = nodeText;
+    //         }
+    //         for (var relId in self.selectedRelationships) {
+    //             var relText = self.selectedRelationships[relId].text.attr("text") + String.fromCharCode(e.keyCode);
+    //             self.selectedRelationships[relId].text.attr({text: relText});
+    //             self.serializableRelationships[relId].text = relText;
+    //         }
+    //     } else {
+    //         switch (e.keyCode) {
+    //             // e
+    //             case 101:
+    //                 var mem = document.getElementById("memo").firstChild;
+    //                 var uriContent = "data:image/svg+xml;filename=filename.svg," + encodeURIComponent((new XMLSerializer()).serializeToString(mem));
+    //                 var downloadLink = document.createElement("a");
+    //                 downloadLink.href = uriContent;
+    //                 downloadLink.download = "mem.svg";
+    //                 downloadLink.click();
+    //                 break;
+    //             // s
+    //             case 115:
+    //                 var mem = JSON.stringify({
+    //                     lastNodeId: self.lastNodeId,
+    //                     lastConnectionId: self.lastConnectionId,
+    //                     serializableNodes: self.serializableNodes,
+    //                     serializableRelationships: self.serializableRelationships
+    //                 },function(k, v) {
+    //                     var result;
+    //                     if (k == 'text') {
+    //                         result = v.replace(/ /g, '\u0027');
+    //                     } else {
+    //                         result = v;
+    //                     }
+    //                     return result;
+    //                 });
+    //                 var uriContent = "data:application/json;filename=filename.json," + mem;
+    //                 var downloadLink = document.createElement("a");
+    //                 downloadLink.href = uriContent;
+    //                 downloadLink.download = "mem.json";
+    //                 downloadLink.click();
+    //                 break;
+    //             // o
+    //             case 111:
+    //                 var loadMem = function(e) {
+    //                     var files = e.target.files;
+    //                     var file = files[0];
+    //                     var reader = new FileReader();
+    //                     reader.onload = function(e) {
+    //                         var mem = JSON.parse(e.target.result, function(k, v) {
+    //                             var result;
+    //                             if (k == 'text') {
+    //                                 result = v.replace(/\u0027/g, ' ');
+    //                             } else {
+    //                                 result = v;
+    //                             }
+    //                             return result;
+    //                         });
+    //                         self.loadMem(mem);
+    //                     };
+    //                     reader.readAsText(file);
+    //                 };
+    //                 var textInput = document.createElement("input");
+    //                 textInput.type = "file";
+    //                 textInput.accept = ".json";
+    //                 textInput.onchange = loadMem;
+    //                 textInput.click();
+    //                 break;
+    //             // plus
+    //             case 43:
+    //                 self.setView(self.currentZoom / self.ZOOM_KEYBOARD_FACTOR, self.viewX + self.viewWidth / 2, self.viewY + self.viewHeight / 2);
+    //                 break;
+    //             // minus
+    //             case 45:
+    //                 self.setView(self.currentZoom * self.ZOOM_KEYBOARD_FACTOR, self.viewX + self.viewWidth / 2, self.viewY + self.viewHeight / 2);
+    //                 break;
+    //         }
+    //         ;
+    //     }
+    // };
 }
 
 Memo.prototype.nextNodeId = function () {
@@ -1019,6 +991,17 @@ Memo.prototype.xGlobalToScreen = function(x) {
 
 Memo.prototype.yGlobalToScreen = function(y) {
     return (y - this.viewY + this.viewHeight / 2) / this.currentZoom;
+};
+
+Memo.prototype.toggleSelection = function(x, y) {
+    var object = this.getObject(x, y);
+    if (object) {
+        if (object.type == "rect") {
+            this.toggleSelectedNode(object);
+        } else if (object.type == "path") {
+            this.toggleSelectedRelationship(object);
+        }
+    }
 };
 
 var memo;
