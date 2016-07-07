@@ -1,5 +1,21 @@
-debug current state
-revert timeouts
-repeated patternmatch
+[repeated patternmatch]
 	case - mouse move
-maybe replace InputProcessors with tuples of startingstate, patternmatcher and action 
+		not the case - every mouse move has its small action
+[maybe replace InputProcessors with tuples of startingstate, patternmatcher and action]
+move all existing action to new Input
+	selection (node, edge)
+		toggle
+		multinode
+	deselection
+	drag
+	removal
+	zoom
+		mouse
+		keyboard
+	scroll
+		mouse
+		keyboard
+	save
+		svg
+		json
+	load
