@@ -122,6 +122,9 @@ function Memo() {
     this.paper.canvas.onmousedown = function (mouseEvent) {
         self.input.feed(mouseEvent);
     };
+    this.paper.canvas.onmouseup = function (mouseEvent) {
+        self.input.feed(mouseEvent);
+    };
     
     
     
@@ -960,31 +963,51 @@ Memo.prototype.onFrame = function() {
 
 Memo.prototype.getObject = function(x, y) {
     var result = null;
-    var element = self.paper.getElementByPoint(x, y);
-    switch (element.type) {
-        case "rect":
-            result = this.nodes[element.data("id")];
-            break;
-        case "text":
-            result = this.nodes[element.data("nodeId")];
-            break;
-        case "path":
-            result = this.relationships[element.data("id")];
-            break;
+    var element = this.paper.getElementByPoint(this.xGlobalToScreen(x), this.yGlobalToScreen(y));
+    if (element) {
+        switch (element.type) {
+            case "rect":
+                result = this.nodes[element.data("id")];
+                break;
+            case "text":
+                result = this.nodes[element.data("nodeId")];
+                break;
+            case "path":
+                result = this.relationships[element.data("id")];
+                break;
+        }
     }
     return result;
 };
 
 Memo.prototype.createEdge = function(startX, startY, endX, endY) {
     var from = this.getObject(startX, startY);
-    var to = this.getObject(endX, endY);
     if (from == null || from.type != "rect") {
-        this.addNode(startX, startY);
+        from = this.addNode(startX, startY);
     }
+    var to = this.getObject(endX, endY);
     if (to == null || to.type != "rect") {
-        this.addNode(endX, endY);
+        to = this.addNode(endX, endY);
     }
-    this.addConnection(from.data("id"), to.data[id]);
+    if (from.data("id") != to.data("id")) {
+        this.addConnection(from.data("id"), to.data("id"));
+    }
+};
+
+Memo.prototype.xScreenToGlobal = function(x) {
+    return x * this.currentZoom + this.viewX - this.viewWidth / 2;
+};
+
+Memo.prototype.yScreenToGlobal = function(y) {
+    return y * this.currentZoom + this.viewY - this.viewHeight / 2;
+};
+
+Memo.prototype.xGlobalToScreen = function(x) {
+    return x / this.currentZoom - this.viewX + this.viewWidth / 2;
+};
+
+Memo.prototype.yGlobalToScreen = function(y) {
+    return y / this.currentZoom - this.viewY + this.viewHeight / 2;
 };
 
 var memo;

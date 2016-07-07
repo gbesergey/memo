@@ -33,7 +33,7 @@ class Input {
                     this._runningInputProcessors.push(inputProcessorEntry.getInputProcessor());
                 }
             }
-            // reverse "for" for splice to work correctly
+            // "reverse for" for splice to work correctly
             for (var i = this._runningInputProcessors.length - 1; i >= 0; i--) {
                 var runningInputProcessor = this._runningInputProcessors[i];
                 var eventProcessingResult = runningInputProcessor.next(this._eventBuffer[eventIndex]);
@@ -90,7 +90,7 @@ class InputPatternMatcher {
                             match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0, 
                             readParams: (inputEvent) => ({x: inputEvent.screenX, y: inputEvent.screenY})
                         }
-                    ], 
+                    ],
                     null, 500)
             ),
             MIDDLE_CLICK: () => (new InputPatternMatcher(
@@ -115,11 +115,11 @@ class InputPatternMatcher {
                         {
                             match: (inputEvent) => {debug("1"); return inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" &&
                             inputEvent.button == 1},
-                            readParams: (inputEvent) => ({startX: inputEvent.screenX, startY: inputEvent.screenY})
+                            readParams: (inputEvent) => ({startX: inputEvent.clientX, startY: inputEvent.clientY})
                         },
                         {
                             match: (inputEvent) => {debug("2"); return inputEvent instanceof MouseEvent && inputEvent.type == "mouseup" && inputEvent.button == 1},
-                            readParams: (inputEvent) => ({endX: inputEvent.screenX, endY: inputEvent.screenY})
+                            readParams: (inputEvent) => ({endX: inputEvent.clientX, endY: inputEvent.clientY})
                         }
                     ], null, 500)
             ),
@@ -159,7 +159,7 @@ class InputPatternMatcher {
                     this._inputData[propName] = inputData[propName]; 
                 }
                 this._currentMatchingFunction++;
-                if (this._currentMatchingFunction > this._patternMatchingFunctions.length) {
+                if (this._currentMatchingFunction == this._patternMatchingFunctions.length) {
                     result = this._inputData;
                 }
             }
@@ -189,18 +189,17 @@ class InputProcessor {
                 getInputProcessor : () => new InputProcessor(
                     InputPatternMatcher.INPUT_PATTERN_MATCHERS.MIDDLE_CLICK(),
                     function (graph, inputData) {
-                        var x = inputData.x * this._graph.currentZoom + this._graph.viewX - this._graph.viewWidth / 2;
-                        var y = inputData.y * this._graph.currentZoom + this._graph.viewY - this._graph.viewHeight / 2;
-                        graph.addNode(x, y);
+                        graph.addNode(graph.xScreenToGlobal(inputData.x), graph.yScreenToGlobal(inputData.y));
                     }
                 )
             },
-            CREATE_ARK: {
+            CREATE_EDGE: {
                 startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.ANY,
                 getInputProcessor : () => new InputProcessor(
                     InputPatternMatcher.INPUT_PATTERN_MATCHERS.EDGE(),
                     function (graph, inputData) {
-                        graph.createEdge(inputData.startX, inputData.startY, inputData.endX, inputData.endY);
+                        
+                        graph.createEdge(graph.xScreenToGlobal(inputData.startX), graph.yScreenToGlobal(inputData.startY), graph.xScreenToGlobal(inputData.endX), graph.yScreenToGlobal(inputData.endY));
                     }
                 )
             },
