@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3d8a68-d948-4509-ba20-4a7c8b951eb9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/memo.js" afterPath="$PROJECT_DIR$/js/memo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Input.js" afterPath="$PROJECT_DIR$/js/Input.js" />
     </list>
     <ignored path="memo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,21 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="memo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="memo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/memo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-106">
+            <state relative-caret-position="3461">
               <caret line="177" column="34" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Input.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Input.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="221" column="22" selection-start-line="221" selection-start-column="22" selection-end-line="221" selection-end-column="22" />
+            <state relative-caret-position="1196">
+              <caret line="131" column="64" selection-start-line="131" selection-start-column="64" selection-end-line="131" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -76,8 +76,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_8.txt" />
         <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_9.txt" />
-        <option value="$PROJECT_DIR$/js/Input.js" />
         <option value="$PROJECT_DIR$/js/memo.js" />
+        <option value="$PROJECT_DIR$/js/Input.js" />
       </list>
     </option>
   </component>
@@ -706,7 +706,7 @@
       <workItem from="1467742067340" duration="3503000" />
       <workItem from="1467800362823" duration="22049000" />
       <workItem from="1467835701483" duration="13000" />
-      <workItem from="1467885162040" duration="11800000" />
+      <workItem from="1467885162040" duration="11976000" />
     </task>
     <task id="LOCAL-00001" summary="removed pan limits">
       <created>1431453487898</created>
@@ -792,11 +792,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467900626601</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix GlobalToScreen functions">
+      <created>1467900817754</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1467900817754</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191890000" />
+    <option name="totallyTimeSpent" value="192066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1924" height="1082" extended-state="0" />
@@ -864,7 +871,8 @@
     <MESSAGE value="start new Input integration" />
     <MESSAGE value="refactor Input more" />
     <MESSAGE value="new Input works" />
-    <option name="LAST_COMMIT_MESSAGE" value="new Input works" />
+    <MESSAGE value="fix GlobalToScreen functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix GlobalToScreen functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1256,18 +1264,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/Input.js">
+    <entry file="file://$PROJECT_DIR$/js/memo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="221" column="22" selection-start-line="221" selection-start-column="22" selection-end-line="221" selection-end-column="22" />
+        <state relative-caret-position="3461">
+          <caret line="177" column="34" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/memo.js">
+    <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="177" column="34" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
+        <state relative-caret-position="1196">
+          <caret line="131" column="64" selection-start-line="131" selection-start-column="64" selection-end-line="131" selection-end-column="64" />
           <folding />
         </state>
       </provider>

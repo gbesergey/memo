@@ -79,6 +79,14 @@ class StartingStateChecker {
 }
 
 class InputPatternMatcher {
+
+    /**
+     * @return {number}
+     */
+    static get DEFAULT_TIMEOUT() {
+        return 50000;
+    }
+    
     /**
      * @return {Object.<string, InputPatternMatcher>}
      */
@@ -91,7 +99,7 @@ class InputPatternMatcher {
                             readParams: (inputEvent) => ({x: inputEvent.screenX, y: inputEvent.screenY})
                         }
                     ],
-                    null, 500)
+                    null, InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
             MIDDLE_CLICK: () => (new InputPatternMatcher(
                     [
@@ -99,7 +107,7 @@ class InputPatternMatcher {
                             match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 1,
                             readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
                         }
-                    ], null, 500)
+                    ], null, InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
             MOUSE_MOVE: () => (new InputPatternMatcher(
                     [
@@ -108,7 +116,7 @@ class InputPatternMatcher {
         (inputEvent.movementX != 0 || inputEvent.movementY != 0),
                             readParams: (inputEvent) => ({})
                         }
-                    ], null, 500)
+                    ], null, InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
             EDGE: () => (new InputPatternMatcher(
                     [
@@ -121,7 +129,7 @@ class InputPatternMatcher {
                             match: (inputEvent) => {debug("2"); return inputEvent instanceof MouseEvent && inputEvent.type == "mouseup" && inputEvent.button == 1},
                             readParams: (inputEvent) => ({endX: inputEvent.clientX, endY: inputEvent.clientY})
                         }
-                    ], null, 500)
+                    ], null, InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
         }
     }
