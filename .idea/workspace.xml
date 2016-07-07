@@ -42,8 +42,8 @@
       <file leaf-file-name="Input.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/Input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="131" column="64" selection-start-line="131" selection-start-column="64" selection-end-line="131" selection-end-column="64" />
+            <state relative-caret-position="850">
+              <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -706,7 +706,7 @@
       <workItem from="1467742067340" duration="3503000" />
       <workItem from="1467800362823" duration="22049000" />
       <workItem from="1467835701483" duration="13000" />
-      <workItem from="1467885162040" duration="11976000" />
+      <workItem from="1467885162040" duration="12325000" />
     </task>
     <task id="LOCAL-00001" summary="removed pan limits">
       <created>1431453487898</created>
@@ -799,11 +799,18 @@
       <option name="project" value="LOCAL" />
       <updated>1467900817754</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix default timeouts for INPUT_PATTERN_MATCHERS">
+      <created>1467900991266</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1467900991266</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192066000" />
+    <option name="totallyTimeSpent" value="192415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1924" height="1082" extended-state="0" />
@@ -872,7 +879,8 @@
     <MESSAGE value="refactor Input more" />
     <MESSAGE value="new Input works" />
     <MESSAGE value="fix GlobalToScreen functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix GlobalToScreen functions" />
+    <MESSAGE value="fix default timeouts for INPUT_PATTERN_MATCHERS" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix default timeouts for INPUT_PATTERN_MATCHERS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1274,8 +1282,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Input.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="131" column="64" selection-start-line="131" selection-start-column="64" selection-end-line="131" selection-end-column="64" />
+        <state relative-caret-position="850">
+          <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
           <folding />
         </state>
       </provider>

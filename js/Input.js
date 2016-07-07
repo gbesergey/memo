@@ -121,12 +121,12 @@ class InputPatternMatcher {
             EDGE: () => (new InputPatternMatcher(
                     [
                         {
-                            match: (inputEvent) => {debug("1"); return inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" &&
-                            inputEvent.button == 1},
+                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" &&
+                            inputEvent.button == 1,
                             readParams: (inputEvent) => ({startX: inputEvent.clientX, startY: inputEvent.clientY})
                         },
                         {
-                            match: (inputEvent) => {debug("2"); return inputEvent instanceof MouseEvent && inputEvent.type == "mouseup" && inputEvent.button == 1},
+                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mouseup" && inputEvent.button == 1,
                             readParams: (inputEvent) => ({endX: inputEvent.clientX, endY: inputEvent.clientY})
                         }
                     ], null, InputPatternMatcher.DEFAULT_TIMEOUT)
@@ -239,8 +239,4 @@ class InputProcessor {
     action(graph, inputData) {
         this._action(graph, inputData);
     }
-}
-
-function debug(param) {
-    var a = param;
 }
