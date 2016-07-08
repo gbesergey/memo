@@ -106,7 +106,16 @@ class InputPatternMatcher {
             LEFT_CLICK: () => (new InputPatternMatcher(
                     [
                         {
-                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0, 
+                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0 && !inputEvent.ctrlKey,
+                            readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
+                        }
+                    ],
+                    null, InputPatternMatcher.DEFAULT_TIMEOUT)
+            ),
+            LEFT_CLICK_PLUS_CTRL: () => (new InputPatternMatcher(
+                    [
+                        {
+                            match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0 && inputEvent.ctrlKey, 
                             readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
                         }
                     ],
@@ -202,10 +211,19 @@ class InputProcessor {
      */
     static get STARTING_STATE_CHECKER_TO_INPUT_PROCESSOR_MAP() {
         return {
-            SELECT_NODE: {
-                startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.NOT_SELECTED,
+            SELECT: {
+                startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.ANY,
                 getInputProcessor : () => new InputProcessor(
                     InputPatternMatcher.INPUT_PATTERN_MATCHERS.LEFT_CLICK(),
+                    function (graph, inputData) {
+                        graph.select(graph.xScreenToGlobal(inputData.x), graph.yScreenToGlobal(inputData.y));
+                    }
+                )
+            },
+            TOGGLE_SELECT: {
+                startingStateChecker : StartingStateChecker.STARTING_STATE_CHECKERS.ANY,
+                getInputProcessor : () => new InputProcessor(
+                    InputPatternMatcher.INPUT_PATTERN_MATCHERS.LEFT_CLICK_PLUS_CTRL(),
                     function (graph, inputData) {
                         graph.toggleSelection(graph.xScreenToGlobal(inputData.x), graph.yScreenToGlobal(inputData.y));
                     }

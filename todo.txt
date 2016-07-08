@@ -7,10 +7,19 @@
 		use firstMatch in PatternMatcher			
 //way to unify Messages from different sources (call to feed)
 	through identity check in feed
+[conflict resolution]
+	case - select and toggle selection
+		fast solution - more precise InputPatterns
+way for long running actions
+refactor Memo
+	js6
+	Graph
 move all existing action to new Input
 	selection (node, edge)
-		toggle
-		multinode
+    	toggle
+	create
+		fix creation over already existent
+	multinode selection
 	deselection
 	drag
 	removal

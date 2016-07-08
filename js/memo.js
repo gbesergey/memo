@@ -934,10 +934,6 @@ Memo.prototype.loadMem = function(mem) {
     this.clearSelection();
 };
 
-Memo.prototype.selectNode = function(x ,y) {
-    this.addSelectedNode(self.paper.getElementByPoint(x, y));
-};
-
 Memo.prototype.onFrame = function() {
     var self = this;
     this.input.next();
@@ -993,12 +989,24 @@ Memo.prototype.yGlobalToScreen = function(y) {
     return (y - this.viewY + this.viewHeight / 2) / this.currentZoom;
 };
 
+Memo.prototype.select = function (x, y) {
+    this.clearSelection();
+    var object = this.getObject(x, y);
+    if (object) {
+        if (object.type == "rect") {
+            this.addSelectedNode(object);
+        } else if (object.path) {
+            this.addSelectedRelationship(object);
+        }
+    }
+};
+
 Memo.prototype.toggleSelection = function(x, y) {
     var object = this.getObject(x, y);
     if (object) {
         if (object.type == "rect") {
             this.toggleSelectedNode(object);
-        } else if (object.type == "path") {
+        } else if (object.path) {
             this.toggleSelectedRelationship(object);
         }
     }
