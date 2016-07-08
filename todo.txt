@@ -17,6 +17,16 @@ way for long running actions
 		cases
 			stop zoom
 			stop pan
+		solution
+			action
+				has objects on which it acts
+				has interactions rules
+					no interaction
+					last one
+					[cancel]
+					[mix]
+			way to specify interaction rules
+				
 refactor Memo
 	js6
 	[Flow] || [TypeScript]
