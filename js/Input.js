@@ -234,7 +234,7 @@ class InputProcessor {
                 getInputProcessor : () => new InputProcessor(
                     InputPatternMatcher.INPUT_PATTERN_MATCHERS.MIDDLE_CLICK(),
                     function (graph, inputData) {
-                        graph.addNode(graph.xScreenToGlobal(inputData.x), graph.yScreenToGlobal(inputData.y));
+                        graph.putNode(graph.xScreenToGlobal(inputData.x), graph.yScreenToGlobal(inputData.y));
                     }
                 )
             },

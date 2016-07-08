@@ -1012,6 +1012,13 @@ Memo.prototype.toggleSelection = function(x, y) {
     }
 };
 
+Memo.prototype.putNode = function(x, y) {
+    var object = this.getObject(x, y);
+    if (!object || object.type != "rect") {
+        this.addNode(x, y);
+    }
+};
+
 var memo;
 
 window.onload = function () {

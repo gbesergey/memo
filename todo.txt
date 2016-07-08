@@ -2,6 +2,7 @@
 	case - mouse move
 		not the case - every mouse move has its small action
 [maybe replace InputProcessors with tuples of startingstate, patternmatcher and action]
+	convenient configuration - regex-like
 //cancels related trouble
 	if starting state not very precise (for example ANY) and no cancel - then can be generated a lot of PatternMatcher which will no complete until they match
 		use firstMatch in PatternMatcher			
@@ -11,9 +12,16 @@
 	case - select and toggle selection
 		fast solution - more precise InputPatterns
 way for long running actions
+	actions array
+	actions interaction
+		cases
+			stop zoom
+			stop pan
 refactor Memo
 	js6
+	[Flow] || [TypeScript]
 	Graph
+	webworkers
 move all existing action to new Input
 	selection (node, edge)
     	toggle
