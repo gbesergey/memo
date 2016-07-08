@@ -2,11 +2,11 @@
 	case - mouse move
 		not the case - every mouse move has its small action
 [maybe replace InputProcessors with tuples of startingstate, patternmatcher and action]
-cancels related trouble
+//cancels related trouble
 	if starting state not very precise (for example ANY) and no cancel - then can be generated a lot of PatternMatcher which will no complete until they match
-		case EDGE creation
-			
-way to unify Messages from different sources (call to feed)
+		use firstMatch in PatternMatcher			
+//way to unify Messages from different sources (call to feed)
+	through identity check in feed
 move all existing action to new Input
 	selection (node, edge)
 		toggle

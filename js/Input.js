@@ -19,7 +19,17 @@ class Input {
      * @return {undefined}
      */
     feed(inputEvent) {
-        this._eventBuffer.push(inputEvent);
+        if (!this.alreadyFed(inputEvent)) {
+            this._eventBuffer.push(inputEvent);
+        }
+    }
+
+    /**
+     * @param {MemoInputEvent} inputEvent
+     * @return {boolean}
+     */
+    alreadyFed(inputEvent) {
+        return this._eventBuffer.some((currentValue) => inputEvent === currentValue);
     }
 
     /**
@@ -100,8 +110,7 @@ class InputPatternMatcher {
                             readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
                         }
                     ],
-                    (inputEvent) => !(inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 0), 
-                    InputPatternMatcher.DEFAULT_TIMEOUT)
+                    null, InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
             MIDDLE_CLICK: () => (new InputPatternMatcher(
                     [
@@ -109,8 +118,7 @@ class InputPatternMatcher {
                             match: (inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 1,
                             readParams: (inputEvent) => ({x: inputEvent.clientX, y: inputEvent.clientY})
                         }
-                    ], () => !((inputEvent) => inputEvent instanceof MouseEvent && inputEvent.type == "mousedown" && inputEvent.button == 1), 
-                    InputPatternMatcher.DEFAULT_TIMEOUT)
+                    ], null, InputPatternMatcher.DEFAULT_TIMEOUT)
             ),
             MOUSE_MOVE: () => (new InputPatternMatcher(
                     [
@@ -148,7 +156,7 @@ class InputPatternMatcher {
         this._patternMatchingFunctions = patternMatchingFunctions;
         this._cancelFunction = cancelFunction;
         this._timeout = timeout;
-        this._currentMatchingFunction = 1;
+        this._currentMatchingFunction = 0;
         this._inputData = {};
     }
 

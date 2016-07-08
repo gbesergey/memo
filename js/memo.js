@@ -122,24 +122,24 @@ function Memo() {
     this.paper.canvas.onmousedown = function (mouseEvent) {
         self.input.feed(mouseEvent);
     };
-    // this.paper.canvas.onmouseup = function (mouseEvent) {
-    //     self.input.feed(mouseEvent);
-    // };
-    // window.onmousewheel = function (mouseEvent) {
-    //     self.input.feed(mouseEvent);
-    // };
+    this.paper.canvas.onmouseup = function (mouseEvent) {
+        self.input.feed(mouseEvent);
+    };
+    window.onmousewheel = function (mouseEvent) {
+        self.input.feed(mouseEvent);
+    };
     // window.onmousemove = function (mouseEvent) {
     //     self.input.feed(mouseEvent);
     // };
     // window.document.onmouseout = function (mouseEvent) {
     //     self.input.feed(mouseEvent);
     // };
-    // window.onkeydown = function (mouseEvent) {
-    //     self.input.feed(mouseEvent);
-    // };
-    // window.onkeypress = function (mouseEvent) {
-    //     self.input.feed(mouseEvent);
-    // };
+    window.onkeydown = function (mouseEvent) {
+        self.input.feed(mouseEvent);
+    };
+    window.onkeypress = function (mouseEvent) {
+        self.input.feed(mouseEvent);
+    };
     
     // mouse clicks
     // this.paper.canvas.onmousedown = function () {
